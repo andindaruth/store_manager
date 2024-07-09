@@ -45,7 +45,7 @@
                             $balace_q = $fertiliser->balance * $fertiliser->quantity_per_pack;
                             $pack_cost =  $fertiliser->unit_price * $fertiliser->quantity_per_pack;
                             $balance_cost =  $fertiliser->balance * $fertiliser->unit_price;
-                            $balance_Ha = $fertiliser->balance / $fertiliser->rate;
+                            $balance_Ha = $fertiliser->$balace_q / $fertiliser->rate;
 
                             @endphp
                                 <tr class="text-nowrap">

@@ -49,9 +49,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="person_id">Operator *</label>
+                        <label for="person_id">Taken By *</label>
                         <select class="form-control select2" id="person_id" name="person_id" required>
-                            <option value="">--Select Vehicle</option>
+                            <option value="">--Select person</option>
                             @foreach ($operators as $operator)
                                 <option value="{{ $operator->id }}">{{ $operator->name }}</option>
                             @endforeach

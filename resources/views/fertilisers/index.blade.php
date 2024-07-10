@@ -25,12 +25,11 @@
                             
                             <th>Code</th>
                             <th>Name</th>
-                            <th>Pack Qty(Kg)</th>
+                            <th>Pack.Qty(Kg)</th>
                             <th>Rate(Kg/Ha)</th>
-                            
-                            <th>Ha</th>
-                            <th>unit cost</th>
-                            <th>pack cost</th>
+                            <th>Pack.Ha</th>
+                            <th>Kg.Cost</th>
+                            <th>pack.cost</th>
                             <th>Bal.packs
                             <th>Bal.kgs</th>
                             <th>Bal.cost</th>
@@ -58,9 +57,9 @@
                                     <td>{{ number_format($fertiliser->unit_price, 0, '.', ',') }}</td>
                                     <td>{{ number_format($pack_cost, 0, '.', ',') }}</td>
                                     <td>{{ number_format($fertiliser->balance, 0, '.', ',') }}</td>
-                                    <td>{{ $balace_q }}</td>
+                                    <td>{{ $balance_q }}</td>
                                     <td>{{ number_format($balance_cost, 0, '.', ',') }} </td>  
-                                    <td>{{ number_format($balance_Ha, 2, '.', ',') }}</td>                          
+                                    <td>{{ number_format($balance_Ha, 1, '.', ',') }}</td>                          
                           
 
                                 </tr>

@@ -111,7 +111,7 @@
                             <th>Date</th>
                             <th>Type</th>
                             <th>Vehicle Number</th>
-                            <th>Driver</th>
+                            <th>Taken By</th>
                             <th>Issued By</th>
                             <th>Quantity (litres)</th>
                             <th>Total</th>

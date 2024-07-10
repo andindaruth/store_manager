@@ -27,7 +27,7 @@
                             <th>Date</th>
                             <th>Type</th>
                             <th>Vehicle Number</th>
-                            <th>Driver</th>
+                            <th>Brought By</th>
                             <th>Received By</th>
                             <th>Quantity (litres)</th>
                             <th class="text-nowrap">Action/ Comment</th>

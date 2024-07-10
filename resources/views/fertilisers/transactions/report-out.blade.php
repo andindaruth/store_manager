@@ -112,7 +112,7 @@
                             <th>Receipt No.</th>
                             <th>Destination</th>
                             <th>Issued By</th>
-                            <th>No. of Packs</th>
+                            <th>Packs</th>
                             <th>Qty(Kg)</th>
                             
                             <th>Rate(kg/ha)</th>

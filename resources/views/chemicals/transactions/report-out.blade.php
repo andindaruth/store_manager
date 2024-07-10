@@ -123,13 +123,12 @@
                             <th>Date</th>
                             <th>Name</th>
                             <th>category </th>
-                            <th>Person</th>
+                            <th>Taken By</th>
                             <th>Receipt No.</th>
                             <th>Destination</th>
                             <th>Issued By</th>
-                            <th>No. of Packs</th>
+                            <th>Packs</th>
                             <th>Qty</th>
-                            
                             <th>Rate</th>
                             <th>Ha or Ton</th>                            
                         </tr> 

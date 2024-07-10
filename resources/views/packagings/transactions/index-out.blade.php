@@ -26,11 +26,11 @@
                             <th>Date</th>
                             <th>Name</th>
                             <th>Category</th>
-                            <th>Person</th>
+                            <th>Taken By</th>
                             <th>Receipt No.</th>
                             <th>Destination</th>
                             <th>Issued By</th>
-                            <th>No. Of Packs</th>
+                            <th>Packs</th>
                             <th>Quantity</th>
                            
                             <th class="text-nowrap">Action/ Comment</th>

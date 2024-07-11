@@ -46,15 +46,7 @@
                                   </p>
                               </a>
                           </li>
-                          l class="nav nav-treeview">
-                          <li class="nav-item">
-                              <a href="{{ route('categories.index') }}" class="nav-link">
-
-                                  <p>
-                                      Vehicle Operators
-                                  </p>
-                              </a>
-                          </li>
+                         
                           <li class="nav-item">
                             <a href="{{ route('categories.index') }}" class="nav-link">
 
@@ -92,7 +84,7 @@
                             <a href="{{ route('drivers.index') }}" class="nav-link">
 
                                 <p>
-                                    Drivers
+                                    Drivers / Operators
                                 </p>
                             </a>
                         </li>
@@ -102,20 +94,10 @@
                               <a href="{{ route('operators.index') }}" class="nav-link">
 
                                   <p>
-                                      People who take store items
+                                      Persons who take items from the store and or workshop
                                   </p>
                               </a>
                           </li>
-
-                          
-                  <li class="nav-item">
-                    <a href="{{ route('drivers.index') }}" class="nav-link">
-
-                        <p>
-                            People who take Workshop Items
-                        </p>
-                    </a>
-                </li>
             </ul>
         </li>
                   <li class="nav-item">

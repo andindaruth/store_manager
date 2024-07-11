@@ -46,6 +46,33 @@
                                   </p>
                               </a>
                           </li>
+                          l class="nav nav-treeview">
+                          <li class="nav-item">
+                              <a href="{{ route('categories.index') }}" class="nav-link">
+
+                                  <p>
+                                      Vehicle Operators
+                                  </p>
+                              </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="{{ route('categories.index') }}" class="nav-link">
+
+                                <p>
+                                    Mechanics
+                                </p>
+                            </a>
+                        </li>
+                          <li class="nav-item">
+                            <li class="nav-item">
+                                <a href="{{ route('categories.index') }}" class="nav-link">
+    
+                                    <p>
+                                        Incidents
+                                    </p>
+                                </a>
+                            </li>
+                              <li class="nav-item">
                       </ul>
                   </li>
                   <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
@@ -61,25 +88,36 @@
                           <i class="fas fa-angle-left right"></i>
                       </a>
                       <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('drivers.index') }}" class="nav-link">
+
+                                <p>
+                                    Drivers
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                           <li class="nav-item">
                               <a href="{{ route('operators.index') }}" class="nav-link">
 
                                   <p>
-                                      Operators
+                                      People who take store items
                                   </p>
                               </a>
                           </li>
 
-                          <li class="nav-item">
-                              <a href="{{ route('drivers.index') }}" class="nav-link">
+                          
+                  <li class="nav-item">
+                    <a href="{{ route('drivers.index') }}" class="nav-link">
 
-                                  <p>
-                                      Drivers
-                                  </p>
-                              </a>
-                          </li>
-                      </ul>
-                  </li>
+                        <p>
+                            People who take Workshop Items
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </li>
                   <li class="nav-item">
 
                       <a href="{{ route('admin.users.index') }}" class="nav-link">

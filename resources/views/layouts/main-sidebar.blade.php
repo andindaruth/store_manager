@@ -94,7 +94,7 @@
                               <a href="{{ route('operators.index') }}" class="nav-link">
 
                                   <p>
-                                      Persons who take items from the store and or workshop
+                                      Others
                                   </p>
                               </a>
                           </li>

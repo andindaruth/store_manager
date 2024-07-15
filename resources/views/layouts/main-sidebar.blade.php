@@ -48,7 +48,7 @@
                           </li>
                          
                           <li class="nav-item">
-                            <a href="{{ route('categories.index') }}" class="nav-link">
+                            <a href="{{ route('drivers.index') }}" class="nav-link">
 
                                 <p>
                                     Mechanics
@@ -57,7 +57,7 @@
                         </li>
                           <li class="nav-item">
                             <li class="nav-item">
-                                <a href="{{ route('categories.index') }}" class="nav-link">
+                                <a href="#" class="nav-link">
     
                                     <p>
                                         Incidents
@@ -88,9 +88,7 @@
                                 </p>
                             </a>
                         </li>
-                    </ul>
-                </li>
-                          <li class="nav-item">
+                        <li class="nav-item">
                               <a href="{{ route('operators.index') }}" class="nav-link">
 
                                   <p>
@@ -98,6 +96,9 @@
                                   </p>
                               </a>
                           </li>
+                    </ul>
+                </li>
+                          
             </ul>
         </li>
                   <li class="nav-item">

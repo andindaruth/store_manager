@@ -85,10 +85,24 @@
       <div class="inner">
         <!-- <h3 class="text-success">53</h3> -->
 
+        <p>Other farm-input store items</p>
+      </div>
+      <div class="icon">
+      <i class="fas fa-leaf"></i>
+      </div>
+      <a href="#" class="small-box-footer">Go to dashboard <i class="fas fa-arrow-circle-right"></i></a>
+    </div>
+  </div>
+  <div class="col-lg-6 col-12">
+    <!-- small box -->
+    <div class="small-box bg-light elevation-4">
+      <div class="inner">
+        <!-- <h3 class="text-success">53</h3> -->
+
         <p>Workshop</p>
       </div>
       <div class="icon">
-      <i class="fas fa-box"></i>
+      <i class="fas fa-wrench"></i>
 
       </div>
       <a href="#" class="small-box-footer">Go to dashboard <i class="fas fa-arrow-circle-right"></i></a>

@@ -15,6 +15,7 @@ use App\Http\Controllers\FertiliserController;
 use App\Http\Controllers\FertiliserTransactionController;
 use App\Http\Controllers\PackagingController;
 use App\Http\Controllers\PackagingTransactionController;
+use App\Http\Controllers\WorkshopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -197,3 +198,28 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/packaging-out', [PackagingTransactionController::class, 'store_packaging_out'])->name('packaging-out.store');  
     Route::post('/reverse-packaging-out', [PackagingTransactionController::class, 'reverse_packaging_out'])->name('packaging-out.reverse');
 });
+
+//workshop
+Route::middleware(['auth'])->group(function () {
+    Route::get('/actions', [WorkshopController::class, 'actions']);
+    Route::get('/add', [WorkshopController::class, 'add']);
+    Route::get('/dispose', [WorkshopController::class, 'dispose']);
+    Route::get('/disposed', [WorkshopController::class, 'disposed']);
+    Route::get('/farm', [WorkshopController::class, 'farm']);
+    Route::get('/for_repair', [WorkshopController::class, 'forRepair']);
+    Route::get('/general', [WorkshopController::class, 'general']);
+    Route::get('/give', [WorkshopController::class, 'give']);
+    Route::get('/item', [WorkshopController::class, 'item']);
+    Route::get('/new_item', [WorkshopController::class, 'newItem']);
+    Route::get('/pending_repair', [WorkshopController::class, 'pendingRepair']);
+    Route::get('/repair', [WorkshopController::class, 'repair']);
+    Route::get('/repaired', [WorkshopController::class, 'repaired']);
+    Route::get('/return', [WorkshopController::class, 'return']);
+    Route::get('/returned', [WorkshopController::class, 'returned']);
+    Route::get('/spare_part', [WorkshopController::class, 'sparePart']);
+    Route::get('/taken_nonreturnable', [WorkshopController::class, 'takenNonReturnable']);
+    Route::get('/tool', [WorkshopController::class, 'tool']);
+    Route::get('/unreturned', [WorkshopController::class, 'unreturned']);
+    Route::get('/workshop', [WorkshopController::class, 'workshop']);
+});
+

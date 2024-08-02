@@ -20,7 +20,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
         <a href="{{ route('user.edit-profile') }}" class="dropdown-item">
-            Change password           
+            Edit Profile           
           </a>          
           <div class="dropdown-divider"></div>
           <form action="{{ route('logout') }}" method="POST" class="dropdown-item">

@@ -1,121 +1,59 @@
-<?php include 'partials/head.php'; ?>
+@extends('layouts.app6')
 
-<body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
-        <?php include 'partials/navbar.php'; ?>
-        <?php include 'partials/sidebar.php'; ?>
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper mi-bg">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Returned Equipment</h1>
-                        </div><!-- /.col -->
-                        
-                        <div class="col-sm-6">
-                            <a href="unreturned.php" class="btn float-right bg-success"> <i class="fas fa-undo"></i>UnReturned
-                            </a>
-                        </div><!-- /.col -->
-                      
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
+@section('title', 'Returned ')
+@section('page_title', 'Returned Equipement')
+
+@section('bread_crumb')
+    <ol class="breadcrumb float-sm-right">
+        <a href="{{ route('workshop.actions') }}" class="btn float-right bg-success"> <i class="fas fa-tasks"></i> Actions
+        </a>
+    </ol>
+@endsection
+
+@section('main_content')
+
+    <div class="col-sm-12">
+        <div class="card card-success card-outline">
+            <div class="card-header">
+                <!-- <h4 class="card-title text-success">Items</h4> -->
             </div>
-            <!-- /.content-header -->
-
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        
-                        <!-- filter -->
-                        <div class="col-sm-12">
-                            <div class="card">
-                                <!-- /.card-header -->
-                                <div class="card-body pb-1">
-                                    <form action="enhanced-results.html">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="row">
-                                                    <div class="col-md-9">
-                                                        <div class="form-group">
-                                                            <div class="input-group ">
-                                                                <input type="search" class="form-control form-control-md" placeholder="Search by Item or Person Name" value="">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <button type="submit" class="btn bg-success" value="Search">Search</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body table-responsive p-0">
-                                    <table class="table table-hover table-head-fixed">
-                                        <thead>
-                                            <tr class="text-nowrap">
-                                                <th>Date returned</th>
-                                                <th>Image</th>
-                                                <th>Name</th>
-                                                <th>Returned By</th>
-                                                <th>Received By</th>
-                                                <th>Qty Taken</th>
-                                                <th>Qty Returned</th>
-                                                <th>Qty Unreturned</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>27/17/2024</td>
-                                                <td>Img</td>
-                                                <td>Spanner</td>
-                                                <td>Baguma Timothy</td>
-                                                <td>Andinda</td>
-                                                <td>10</td>
-                                                <td>7</td>
-                                                <td>3</td>
-                                               
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- /.card-body -->                            
-                            </div>
-                            <div class="pb-2">
-                                <nav aria-label="Contacts Page Navigation">
-                                    <ul class="pagination m-0">
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">8</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <!-- /.card-body -->
-                            </div>
-                            <!-- /.card -->
-                        </div>
-                        <!-- filter -->
-
-                    </div><!-- /.main-row -->
-                </div><!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
+            <div class="card-body table-responsive">
+                <table id="example3" class="table table-hover table-head-fixed table-sm table-striped">
+                    <thead>
+                        <tr>                           
+                            <th>Date returned</th>
+                            <th>Name of Equipement</th>
+                            <th>taken By</th>
+                            <th>Returned By</th>
+                            <th>Quantity taken</th>
+                            <th>Quantity returned</th>
+                            <th>Quantity awaiting return</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @unless ($items->isEmpty())
+                            @foreach ($items as $item)                          
+                                <tr class="text-nowrap">
+                                    <td>{{ $item->date }}</td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $person->name }}</td>
+                                    <td>{{ $person->name }}</td>
+                                    <td>{{ $item->quantity_taken }}</td>
+                                    <td>{{ $item->quantity_returned }}</td>
+                                    <td>{{ $item->quantity_awaiting_return }}</td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <tr class="border-gray-300">
+                                <td colspan="10">
+                                    <p class="text-center">No items Found</p>
+                                </td>
+                            </tr>
+                        @endunless
+                    </tbody>
+                </table>
+            </div> <!-- /.card-body -->
         </div>
-        <!-- /.content-wrapper -->
-        <?php include 'partials/footer.php'; ?>
     </div>
-    <!-- ./wrapper -->
-    <?php include 'partials/foot.php'; ?>
+
+@endsection

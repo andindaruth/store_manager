@@ -85,7 +85,7 @@
       <div class="inner">
         <!-- <h3 class="text-success">53</h3> -->
 
-        <p>Other farm-input store items</p>
+        <p>Others</p>
       </div>
       <div class="icon">
       <i class="fas fa-leaf"></i>
@@ -105,7 +105,7 @@
       <i class="fas fa-wrench"></i>
 
       </div>
-      <a href="#" class="small-box-footer">Go to dashboard <i class="fas fa-arrow-circle-right"></i></a>
+      <a href="{{ route('workshop.actions') }}" class="small-box-footer">Go to dashboard <i class="fas fa-arrow-circle-right"></i></a>
     </div>
   </div>
   <!-- ./col -->

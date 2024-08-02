@@ -1,7 +1,7 @@
 @extends('layouts.app6')
 
-@section('title', 'Items ')
-@section('page_title', 'Items')
+@section('title', 'Pending Return ')
+@section('page_title', 'Pending Return')
 
 @section('bread_crumb')
     <ol class="breadcrumb float-sm-right">
@@ -21,25 +21,29 @@
                 <table id="example3" class="table table-hover table-head-fixed table-sm table-striped">
                     <thead>
                         <tr>                           
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Re-order value</th>
-                            <th>Quantity in stock</th>
-                            <th>Comment</th>
+                            <th>Date taken</th>
+                            <th>Name of Equipement</th>
+                            <th>Taken By</th>
+                            <th>Issued By</th>
+                            <th>Quantity Taken</th>
+                            <th>Quantity Returned</th>
+                            <th>Quantity Pending Return</th>
+                            <th>Days pending</th>                            
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @unless ($items->isEmpty())
                             @foreach ($items as $item)                          
                                 <tr class="text-nowrap">
-                                    <td><a href="{{ route('items.edit', ['item' => $item]) }}">{{ $item->image }}</a>
-                                    </td>
+                                    <td>{{ $item->date }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->Description }}</td>
-                                    <td>{{ $item->re_order_value }}</td>
-                                    <td>{{ $item->quantity_in_stock }}</td>
-                                    <td>{{ $item->Comment }}</td>
+                                    <td>{{ $person->name }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $item->quantity_taken }}</td>
+                                    <td>{{ $item->quantity_returned }}</td>
+                                    <td>{{ $item->quantity_pending_taken }}</td>
+                                    <td><a href="{{ route('workshop.return') }}"></a></td>
                                 </tr>
                             @endforeach
                         @else

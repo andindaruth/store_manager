@@ -11,11 +11,11 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Create new Item/Tool/SparePart</h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                            </ol>
+                            <h1 class="m-0">Recommended for Repair</h1>
+                            </div><!-- /.col -->
+                          <div class="col-sm-6">
+                            <a href="repaired.php" class="btn float-right bg-success">  <i class="fas fa-redo"></i> Repaired
+                            </a>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -39,38 +39,10 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label style="font-weight: normal;" for="amount">Category 1</label>
-                                                   <select> <option>Item</option>
-                                                    <option>Tool</option>
-                                                    <option>Spare Part</option> </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label style="font-weight: normal;" for="amount">Category 2</label>
-                                                   <select> <option>Returnable</option>
-                                                    <option>Non Returnable</option></select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label style="font-weight: normal;" for="amount">Category 3</label>
-                                                   <select> <option>Workshop</option>
-                                                    <option>Farm</option></select>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label style="font-weight: normal;" for="amount">Description or Purpose</label>
+                                                    <label style="font-weight: normal;" for="amount">Quantity to be repaired</label>
                                                     <input name="amount" type="text" class="form-control" value="">
                                                 </div>
                                             </div>
@@ -78,7 +50,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label style="font-weight: normal;" for="amount">Quantity in Stock</label>
+                                                    <label style="font-weight: normal;" for="amount">Quantity repaired</label>
                                                     <input name="amount" type="text" class="form-control" value="">
                                                 </div>
                                             </div>
@@ -86,7 +58,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label style="font-weight: normal;" for="amount">Re-order value</label>
+                                                    <label style="font-weight: normal;" for="amount">Repaired By</label>
                                                     <input name="amount" type="text" class="form-control" value="">
                                                 </div>
                                             </div>
@@ -94,28 +66,12 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label style="font-weight: normal;" for="amount">Image</label>
-                                                    <input type="file" name="image" id="imageInput" accept="image/*" class="form-control">
-                                                    <div class="image-preview" id="imagePreview">
-                                                        <p>No image selected</p>
+                                                    <label style="font-weight: normal;" for="amount">Actions taken</label>
+                                                    <input name="amount" type="text" class="form-control" value="">
                                                 </div>
                                             </div>
                                         </div>
-                                        <script>
-                                document.getElementById('imageInput').addEventListener('change', function(event) {
-                                    const file = event.target.files[0];
-                                    if (file) {
-                                        const reader = new FileReader();
-                                        reader.onload = function(e) {
-                                            const imagePreview = document.getElementById('imagePreview');
-                                            imagePreview.innerHTML = `<img src="${e.target.result}" alt="Selected Image" class="img-fluid">`;
-                                        }
-                                        reader.readAsDataURL(file);
-                                    } else {
-                                        document.getElementById('imagePreview').innerHTML = '<p>No image selected</p>';
-                                    }
-                                });
-                            </script>
+                                        
                                     </div>
                                     <!-- /.card-body -->
                                     <div class="card-footer">

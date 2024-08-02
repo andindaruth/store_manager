@@ -1,8 +1,8 @@
 <!-- resources/views/workshop/add.blade.php -->
 @extends('layouts.app6')
 
-@section('title', 'Return | NASECO')
-@section('page_title', 'Return a taken Returnable Equipement')
+@section('title', 'New Equipement | NASECO')
+@section('page_title', 'New Equipement')
 
 @section('bread_crumb')
 <ol class="breadcrumb float-sm-right btn btn-default">

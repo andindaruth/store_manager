@@ -1,116 +1,66 @@
-<?php include 'partials/head.php'; ?>
+@extends('layouts.app6')
 
-<body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
-        <?php include 'partials/navbar.php'; ?>
-        <?php include 'partials/sidebar.php'; ?>
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper mi-bg">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Actions</h1>
-                        </div><!-- /.col -->
-                       <!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </div>
-            <!-- /.content-header -->
+@section('title', 'Actions ')
+@section('page_title', 'Actions')
 
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        
-                        <!-- filter -->
-                        <div class="col-sm-12">
-                            <div class="card">
-                                <!-- /.card-header -->
-                                <div class="card-body pb-1">
-                                    <form action="enhanced-results.html">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="row">
-                                                    <div class="col-md-9">
-                                                        <div class="form-group">
-                                                            <div class="input-group ">
-                                                                <input type="search" class="form-control form-control-md" placeholder="Search by Item Name" value="">
+@section('bread_crumb')
+    <ol class="breadcrumb float-sm-right">
+       <li> <a href="{{ route('items.create') }}" class="btn float-right bg-success"><i class="fas fa-plus"></i> Add new
+        </a></li>
+        <li><a href="{{ route('items.create') }}" class="btn float-right bg-success"> <i class="fas fa-redo"></i> Return
+        </a></li>
+      <li>  <a href="{{ route('items.create') }}" class="btn float-right bg-success"><i class="fas fa-exclamation-triangle"></i> Repair
+        </a></li> 
+      <li>  <a href="{{ route('items.create') }}" class="btn float-right bg-success"><i class="fa fa-undo"></i> Reverse
+        </a></li>
+    </ol>
+@endsection
 
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <button type="submit" class="btn bg-success" value="Search">Search</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body table-responsive p-0">
-                                    <table class="table table-hover table-head-fixed">
-                                        <thead>
-                                            <tr class="text-nowrap">
-                                                
-                                                <th>Image</th>
-                                                <th>Name</th>
-                                                <th>Qty in Stock</th>
-                                                <th>Give out</th>
-                                                <th>Add Quantity</th>
-                                                <th>Need Repair</th>
-                                                <th>Dispose</th>
-                                                
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                               
-                                                <td>Img</td>
-                                                <td>Spanner</td>
-                                                <td>5</td>
-                                                <td><a href ="give.php">Give out</a></td> 
-                                                <td><a href ="add.php">Add Qty</a></td> 
-                                                <td><a href ="for_repair.php">Need Repair</a></td> 
-                                                <td><a href ="dispose.php">Dispose</a></td> 
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- /.card-body -->                            
-                            </div>
-                            <div class="pb-2">
-                                <nav aria-label="Contacts Page Navigation">
-                                    <ul class="pagination m-0">
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">8</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <!-- /.card-body -->
-                            </div>
-                            <!-- /.card -->
-                        </div>
-                        <!-- filter -->
+@section('main_content')
 
-                    </div><!-- /.main-row -->
-                </div><!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
+    <div class="col-sm-12">
+        <div class="card card-success card-outline">
+            <div class="card-body table-responsive">
+                <table id="example3" class="table table-hover table-head-fixed table-sm table-striped">
+                    <thead>
+                        <tr>
+                            
+                            
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Quantity in stock</th>
+                            <th>Give out</th>
+                            <th>Add quantity</th>
+                            <th>Recommend for repair</th>
+                            <th>Dispose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @unless ($items->isEmpty())
+                            @foreach ($items as $item)                          
+                                <tr class="text-nowrap">
+                                    <td><a href="{{ route('items.edit', ['item' => $item]) }}">{{ $item->image }}</a>
+                                    </td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->quantity_in_stock }}</td>
+                                    <td><a href="{{ route('items.give') }}"></a></td>
+                                    <td><a href="{{ route('items.add') }}"></a></td>
+                                    <td><a href="{{ route('items.for_repair') }}"></a></td>
+                                    <td><a href="{{ route('items.dispose') }}"></a></td>
+                                                   
+                                </tr>
+                            @endforeach
+                        @else
+                            <tr class="border-gray-300">
+                                <td colspan="10">
+                                    <p class="text-center">No Items Found</p>
+                                </td>
+                            </tr>
+                        @endunless
+                    </tbody>
+                </table>
+            </div> <!-- /.card-body -->
         </div>
-        <!-- /.content-wrapper -->
-        <?php include 'partials/footer.php'; ?>
     </div>
-    <!-- ./wrapper -->
-    <?php include 'partials/foot.php'; ?>
+
+@endsection

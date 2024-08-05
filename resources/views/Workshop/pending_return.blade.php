@@ -28,8 +28,8 @@
                             <th>Quantity Taken</th>
                             <th>Quantity Returned</th>
                             <th>Quantity Pending Return</th>
-                            <th>Days pending</th>                            
-                            <th>Action</th>
+                            <th>Days since taken</th>                            
+                            <th>Return</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,7 +43,7 @@
                                     <td>{{ $item->quantity_taken }}</td>
                                     <td>{{ $item->quantity_returned }}</td>
                                     <td>{{ $item->quantity_pending_taken }}</td>
-                                    <td><a href="{{ route('workshop.return') }}"></a></td>
+                                    <td><a href="{{ route('workshop.return') }}">Return</a></td>
                                 </tr>
                             @endforeach
                         @else

@@ -2,7 +2,7 @@
   <aside class="main-sidebar mi-side-color sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('dashboard') }}" class="brand-link">
-        <span class="brand-text text-success"><b>NASECO </b> Seeds</span>
+        <span class="brand-text text-success"><b>NASECO </b> Workshop</span>
     </a>
     <!-- Sidebar -->
     <div class="sidebar">
@@ -77,7 +77,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('workshop.farm') }}" class="nav-link">
+                    <a href="{{ route('workshop.workshop') }}" class="nav-link">
                     <i class="fas fa-tools"></i>
                         <p>
                             Workshop Equipement
@@ -117,10 +117,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('workshop.general_in') }}" class="nav-link">
+                    <i class="fas fa-clipboard-list"></i>
+                        <p>
+                            General report of Brought Equipement
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('workshop.general') }}" class="nav-link">
                     <i class="fas fa-clipboard-list"></i>
                         <p>
-                            General report of taken items
+                            General report of taken Equipement
                         </p>
                     </a>
                 </li>

@@ -1,85 +1,75 @@
-<?php include 'partials/head.php'; ?>
+<!-- resources/views/workshop/add.blade.php -->
+@extends('layouts.app6')
 
-<body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
-        <?php include 'partials/navbar.php'; ?>
-        <?php include 'partials/sidebar.php'; ?>
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper mi-bg">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Dispose Item</h1>
-                        </div><!-- /.col -->
-                          <div class="col-sm-6">
-                            <a href="actions.php" class="btn float-right bg-success">  <i class="fas fa-tasks"></i> More Actions
-                            </a>
-                        </div><!-- /.col -->
-                        
-                    </div><!-- /.row -->
-            <!-- /.content-header -->
+@section('title', 'Dispose | NASECO')
+@section('page_title', 'Dispose')
 
-            <!-- Main content -->
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <form action="loan_appraisal.php" enctype="multipart/form-data">
-                                <div class="card">
-                                    <div class="card-body">
+@section('bread_crumb')
+<ol class="breadcrumb float-sm-right">
+        <a href="{{ route('workshop.actions') }}" class="btn float-right bg-success"> <i class="fas fa-tasks"></i> Actions
+        </a>
+    </ol>
+@endsection
 
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label style="font-weight: normal;" for="amount">Name</label>
-                                                    <input name="amount" type="text" class="form-control" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label style="font-weight: normal;" for="amount">Quantity in Stock</label>
-                                                    <input name="amount" type="text" class="form-control" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label style="font-weight: normal;" for="amount">Quantity to dispose</label>
-                                                    <input name="amount" type="text" class="form-control" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label style="font-weight: normal;" for="amount">Reason for Disposal</label>
-                                                    <input name="amount" type="text" class="form-control" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.card-body -->
-                                    <div class="card-footer">
-                                        <div class="card-tools text-right">
-                                            <button name="submit" type="submit" class="btn btn-success">Save</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div><!-- /.main-row -->
+@section('main_content')
+<div class="col-sm-12">
+        <form method="post" action="{{ route('items.store') }}">
+            @csrf
+            <div class="card card-outline card-success pl-5 pr-5">
+                <div class="card-body">
+
+                <div class="form-group">
+                        <label for="name">Date*</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}"
+                            placeholder="Enter name" required>
+                        @error('name')
+                            <div class="text-sm text-danger">{{ $message }}</div>
+                        @enderror
+                    </div> 
+
+                    <div class="form-group">
+                        <label for="name">Name of Equipement*</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}"
+                            placeholder="Enter name" required>
+                        @error('name')
+                            <div class="text-sm text-danger">{{ $message }}</div>
+                        @enderror
+                    </div> 
+                    <div class="form-group">
+                        <label for="quantity_per_pack">Quantity In Stock*</label>
+                        <input type="text" class="form-control" id="quantity_in_stock" name="quantity_in_stock" value="{{ old('quantity_in_stock') }}"
+                             required>
+                        @error('quantity_in_stock')
+                            <div class="text-sm text-danger">{{ $message }}</div>
+                        @enderror
+                    </div> 
+                    <div class="form-group">
+                        <label for="re_order_value">Quantity to dispose *</label>
+                        <input type="text" class="form-control" id="image" name="re_order_value" value="{{ old('re_order_value') }}"
+                             required>
+                        @error('re_order_value')
+                            <div class="text-sm text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>   
+                    <div class="form-group">
+                        <label for="code">Issues with Equipement</label>
+                        <input type="text" class="form-control" id="descriprion" name="description" value="{{ old('description') }}"
+                            placeholder="Enter description/purpose" >
+                        @error('description')
+                            <div class="text-sm text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>        
+    
                 </div>
-            </div><!-- /.container-fluid -->
-        </div>
-        <!-- /.content -->
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <div class="card-tools text-right">
+                        <button name="submit" type="submit" class="btn btn-success">save</button>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
-    <!-- /.content-wrapper -->
-    <?php include 'partials/footer.php'; ?>
-    </div>
-    <!-- ./wrapper -->
-    <?php include 'partials/foot.php'; ?>
+
+
+@endsection

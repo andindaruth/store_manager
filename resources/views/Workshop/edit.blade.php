@@ -4,9 +4,8 @@
 @section('page_title', 'Edit Packaging')
 
 @section('bread_crumb')
-    <ol class="breadcrumb float-sm-right btn btn-default">
-        <a href={{ route('packagings.index') }}>
-            <li class="breadcrumb-item btn btn-outline-success btn-sm ">Packaging</li>
+<ol class="breadcrumb float-sm-right">
+        <a href="{{ route('workshop.actions') }}" class="btn float-right bg-success"> <i class="fas fa-tasks"></i> Actions
         </a>
     </ol>
 @endsection

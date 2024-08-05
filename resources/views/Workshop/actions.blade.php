@@ -7,11 +7,11 @@
     <ol class="breadcrumb float-sm-right">
        <li> <a href="{{ route('items.create') }}" class="btn float-right bg-success"><i class="fas fa-plus"></i> Add new
         </a></li>
-        <li><a href="{{ route('items.create') }}" class="btn float-right bg-success"> <i class="fas fa-redo"></i> Return
+        <li><a href="{{ route('workshop.pending_return') }}" class="btn float-right bg-success"> <i class="fas fa-redo"></i> Return
         </a></li>
-      <li>  <a href="{{ route('items.create') }}" class="btn float-right bg-success"><i class="fas fa-exclamation-triangle"></i> Repair
+      <li>  <a href="{{ route('workshop.pending_repair') }}" class="btn float-right bg-success"><i class="fas fa-exclamation-triangle"></i> Repair
         </a></li> 
-      <li>  <a href="{{ route('items.create') }}" class="btn float-right bg-success"><i class="fa fa-undo"></i> Reverse
+      <li>  <a href="{{ route('workshop.actions_performed') }}" class="btn float-right bg-success"><i class="fa fa-undo"></i> Reverse
         </a></li>
     </ol>
 @endsection
@@ -32,7 +32,7 @@
                             <th>Give out</th>
                             <th>Add quantity</th>
                             <th>Recommend for repair</th>
-                            <th>Dispose</th>
+                            <th>Dispose</a></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,10 +43,10 @@
                                     </td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->quantity_in_stock }}</td>
-                                    <td><a href="{{ route('items.give') }}"></a></td>
-                                    <td><a href="{{ route('items.add') }}"></a></td>
-                                    <td><a href="{{ route('items.for_repair') }}"></a></td>
-                                    <td><a href="{{ route('items.dispose') }}"></a></td>
+                                    <td><a href="{{ route('workshop.give') }}">Give out</a></td>
+                                    <td><a href="{{ route('workshop.add') }}">Add quantity</a></td>
+                                    <td><a href="{{ route('workshop.recommend_for_repair') }}">Recommend for repair</a></td>
+                                    <td><a href="{{ route('workshop.dispose') }}">Dispose</a></td>
                                                    
                                 </tr>
                             @endforeach

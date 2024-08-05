@@ -1,7 +1,7 @@
 @extends('layouts.app6')
 
 @section('title', 'General Report ')
-@section('page_title', 'General Report Out')
+@section('page_title', 'General Report In')
 
 @section('bread_crumb')
     <ol class="breadcrumb float-sm-right">
@@ -23,9 +23,9 @@
                         <tr>                           
                             <th>Date taken</th>
                             <th>Name of Equipement</th>
-                            <th>Taken By</th>
-                            <th>Issued By</th>
-                            <th>Quantity Taken</th>
+                            <th>Brought By</th>
+                            <th>Received By</th>
+                            <th>Quantity Brought</th>
                         </tr>
                     </thead>
                     <tbody>

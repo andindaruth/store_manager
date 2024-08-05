@@ -5,11 +5,10 @@
 @section('page_title', 'New Equipement')
 
 @section('bread_crumb')
-<ol class="breadcrumb float-sm-right btn btn-default">
-    <a href="{{ route('workshop.actions') }}">
-        <li class="breadcrumb-item btn btn-outline-success btn-sm">Actions</li>
-    </a>
-</ol>
+<ol class="breadcrumb float-sm-right">
+        <a href="{{ route('workshop.actions') }}" class="btn float-right bg-success"> <i class="fas fa-tasks"></i> Actions
+        </a>
+    </ol>
 @endsection
 
 @section('main_content')

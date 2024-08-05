@@ -31,7 +31,7 @@ class WorkshopController extends Controller
     public function create()
     {
         $user = Auth::user();
-        return view('items.create', compact('user'));
+        return view('workshop.create', compact('user'));
     }
 
     // Store a new item in the database
@@ -108,8 +108,6 @@ class WorkshopController extends Controller
                          ->with('success', 'Item updated successfully.');
     }
 
-
-
     // Specific functionalities
 
 //returned
@@ -136,7 +134,7 @@ public function repaired()
     return view('workshop.repaired', compact('items', 'user'));
 } 
 
-//dispose
+//disposed
 public function disposed()
     {
         $user = Auth::user();
@@ -144,12 +142,99 @@ public function disposed()
         return view('workshop.disposed', compact('items', 'user'));
     }
 
-//general report
+    //general in
+public function general_in()
+{
+    $user = Auth::user();
+    $items = Item::all();
+    return view('workshop.general_in', compact('items', 'user'));
+}
+
+//general Out
 public function general()
     {
         $user = Auth::user();
         $items = Item::all();
         return view('workshop.general', compact('items', 'user'));
     }
+
+//pending return
+public function pending_return()
+{
+    $user = Auth::user();
+    $items = Item::all();
+    return view('workshop.pending_return', compact('items', 'user'));
+}
+
+//pending repair
+public function pending_repair()
+{
+    $user = Auth::user();
+    $items = Item::all();
+    return view('workshop.pending_repair', compact('items', 'user'));
+}
+
+//Actions Performed
+public function actions_performed()
+{
+    $user = Auth::user();
+    $items = Item::all();
+    return view('workshop.actions_performed', compact('items', 'user'));
+}
+
+  //Functionalities that affect quantity in the database
+
+  //Return
+public function return()
+{
+    $user = Auth::user();
+    $items = Item::all();
+    return view('workshop.return', compact('items', 'user'));
+}
+
+  //Repair
+  public function repair()
+  {
+      $user = Auth::user();
+      $items = Item::all();
+      return view('workshop.repair', compact('items', 'user'));
+  }
+
+//Reverse
+public function reverse()
+{
+    $user = Auth::user();
+    $items = Item::all();
+    return view('workshop.reverse', compact('items', 'user'));
+}
+
+//Give out
+public function give()
+{
+    $user = Auth::user();
+    $items = Item::all();
+    return view('workshop.give', compact('items', 'user'));
+}
+//add
+public function add()
+{
+    $user = Auth::user();
+    $items = Item::all();
+    return view('workshop.add', compact('items', 'user'));
+}
+//Recommend for repair
+public function recommend_for_repair()
+{
+    $user = Auth::user();
+    $items = Item::all();
+    return view('workshop.recommend_for_repair', compact('items', 'user'));
+}
+//Dispose
+public function dispose()
+{
+    $user = Auth::user();
+    $items = Item::all();
+    return view('workshop.dispose', compact('items', 'user'));
+}
 
 }

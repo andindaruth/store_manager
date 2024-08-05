@@ -201,21 +201,32 @@ Route::middleware(['auth'])->group(function () {
 
 //workshop
 Route::middleware(['auth'])->group(function () {
-  Route::get('/workshop/index', [WorkshopController::class, 'showIndex'])->name('workshop');
-  Route::get('/items/create', [WorkshopController::class, 'add'])->name('items.create');
+    Route::get('/workshop/actions', [WorkshopController::class, 'actions'])->name('workshop.actions');
+  Route::get('/items/create', [WorkshopController::class, 'create'])->name('items.create');
   Route::post('/items', [WorkshopController::class, 'store'])->name('items.store');
   Route::get('/items/{id}/edit', [WorkshopController::class, 'edit'])->name('items.edit');
   Route::put('/items/{id}', [WorkshopController::class, 'update'])->name('items.update');
-  Route::get('/workshop/actions', [WorkshopController::class, 'actions'])->name('workshop.actions');
   Route::get('/workshop/items', [WorkshopController::class, 'item'])->name('workshop.items');
   Route::get('/workshop/tools', [WorkshopController::class, 'tool'])->name('workshop.tools');
   Route::get('/workshop/spare_parts', [WorkshopController::class, 'spare_part'])->name('workshop.spare_parts');
   Route::get('/workshop/farm', [WorkshopController::class, 'farm'])->name('workshop.farm');
+  Route::get('/workshop/workshop', [WorkshopController::class, 'workshop'])->name('workshop.workshop');
   Route::get('/workshop/returned', [WorkshopController::class, 'returned'])->name('workshop.returned');
   Route::get('/workshop/taken_non_returnable', [WorkshopController::class, 'taken_non_returnable'])->name('workshop.taken_non_returnable');
   Route::get('/workshop/repaired', [WorkshopController::class, 'repaired'])->name('workshop.repaired');
   Route::get('/workshop/disposed', [WorkshopController::class, 'disposed'])->name('workshop.disposed');
   Route::get('/workshop/general', [WorkshopController::class, 'general'])->name('workshop.general');
-  
+  Route::get('/workshop/pending_return', [WorkshopController::class, 'pending_return'])->name('workshop.pending_return');
+  Route::get('/workshop/pending_repair', [WorkshopController::class, 'pending_repair'])->name('workshop.pending_repair');
+  Route::get('/workshop/actions_performed', [WorkshopController::class, 'actions_performed'])->name('workshop.actions_performed');
+  Route::get('/workshop/return', [WorkshopController::class, 'return'])->name('workshop.return');
+  Route::get('/workshop/repair', [WorkshopController::class, 'repair'])->name('workshop.repair');
+  Route::get('/workshop/reverse', [WorkshopController::class, 'reverse'])->name('workshop.reverse');
+  Route::get('/workshop/give', [WorkshopController::class, 'give'])->name('workshop.give');
+  Route::get('/workshop/add', [WorkshopController::class, 'add'])->name('workshop.add');
+  Route::get('/workshop/recommend_for_repair', [WorkshopController::class, 'recommend_for_repair'])->name('workshop.recommend_for_repair');
+  Route::get('/workshop/dispose', [WorkshopController::class, 'dispose'])->name('workshop.dispose');
+  Route::get('/workshop/general_in', [WorkshopController::class, 'general_in'])->name('workshop.general_in');
+
 });
 

@@ -28,8 +28,8 @@
                             <th>Quantity Recommended</th>
                             <th>Quantity Repaired</th>
                             <th>Quantity Pending Repair</th>
-                            <th>Days pending</th>
-                            <th>Action</th>
+                            <th>Days since recommended</th>
+                            <th>Repair</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,7 +44,7 @@
                                     <td>{{ $item->quantity_repaired }}</td>
                                     <td>{{ $item->quantity_pending_repair }}</td>
                                     <td>{{ $item->days_pending }}</td>
-                                    <td><a href="{{ route('workshop.repair') }}"></a></td>
+                                    <td><a href="{{ route('workshop.repair') }}">Repair</a></td>
                                 </tr>
                             @endforeach
                         @else

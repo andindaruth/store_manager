@@ -1,8 +1,8 @@
 <!-- resources/views/workshop/add.blade.php -->
 @extends('layouts.app6')
 
-@section('title', ' Give | NASECO')
-@section('page_title', 'Give out an Equipement')
+@section('title', 'Add | NASECO')
+@section('page_title', 'Add More Quantity')
 
 @section('bread_crumb')
 <ol class="breadcrumb float-sm-right">
@@ -34,39 +34,25 @@
                         @error('name')
                             <div class="text-sm text-danger">{{ $message }}</div>
                         @enderror
-                    </div>  
-                    <div class="form-group">
-                        <label for="quantity_per_pack">Quantity In stock*</label>
-                        <input type="text" class="form-control" id="quantity_in_stock" name="quantity_in_stock" value="{{ old('quantity_in_stock') }}"
-                             required>
-                        @error('quantity_in_stock')
-                            <div class="text-sm text-danger">{{ $message }}</div>
-                        @enderror
                     </div> 
+
                     <div class="form-group">
-                        <label for="re_order_value">Quantity taken *</label>
-                        <input type="text" class="form-control" id="image" name="re_order_value" value="{{ old('re_order_value') }}"
-                             required>
-                        @error('re_order_value')
-                            <div class="text-sm text-danger">{{ $message }}</div>
-                        @enderror
-                    </div> 
-                    <div class="form-group">
-                        <label for="code">Taken By</label>
+                        <label for="code">Brought By</label>
                         <input type="text" class="form-control" id="descriprion" name="description" value="{{ old('description') }}"
                             placeholder="Enter description/purpose" >
                         @error('description')
                             <div class="text-sm text-danger">{{ $message }}</div>
                         @enderror
-                    </div>  
+                    </div>
+                     
                     <div class="form-group">
-                        <label for="re_order_value">Job/Reason *</label>
-                        <input type="text" class="form-control" id="image" name="re_order_value" value="{{ old('re_order_value') }}"
-                             required>
-                        @error('re_order_value')
+                        <label for="code">Quantity brought</label>
+                        <input type="text" class="form-control" id="descriprion" name="description" value="{{ old('description') }}"
+                            placeholder="Enter description/purpose" >
+                        @error('description')
                             <div class="text-sm text-danger">{{ $message }}</div>
                         @enderror
-                    </div>         
+                    </div> 
     
                 </div>
                 <!-- /.card-body -->

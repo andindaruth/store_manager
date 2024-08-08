@@ -12,40 +12,16 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
 
-                <!-- <li class="nav-item">
-                    <a href="{{ route('items.create') }}" class="nav-link">
-                        <i class="fas fa-plus"></i>
-                        <p>
-                            Add new Equipement
-                        </p>
-                    </a>
-                </li> -->
                 <li class="nav-item">
-                    <a href="{{ route('workshop.actions') }}" class="nav-link">
+                    <a href="{{ route('equipment.actions') }}" class="nav-link">
                     <i class="fas fa-tasks"></i>
                         <p>
                             Actions
                         </p>
                     </a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a href="{{ route('fertiliser-out.index') }}" class="nav-link">
-                    <i class="fas fa-undo"></i>
-                        <p>
-                            Return taken Equipement
-                        </p>
-                    </a>
-                </li>
                 <li class="nav-item">
-                    <a href="{{ route('fertiliser-out.index') }}" class="nav-link">
-                    <i class="fas fa-undo"></i>
-                        <p>
-                            Reverse a give out action
-                        </p>
-                    </a>
-                </li> -->
-                <li class="nav-item">
-                    <a href="{{ route('workshop.items') }}" class="nav-link">
+                    <a href="{{ route('equipment.items') }}" class="nav-link">
                     <i class="fas fa-wrench"></i>
                         <p>
                             Items
@@ -53,7 +29,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('workshop.tools') }}" class="nav-link">
+                    <a href="{{ route('equipment.tools') }}" class="nav-link">
                     <i class="fas fa-toolbox"></i>
                         <p>
                             Tools
@@ -61,7 +37,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('workshop.spare_parts') }}" class="nav-link">
+                    <a href="{{ route('equipment.spare_parts') }}" class="nav-link">
                     <i class="fas fa-cogs"></i>
                         <p>
                             Spareparts
@@ -69,7 +45,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('workshop.farm') }}" class="nav-link">
+                    <a href="{{ route('equipment.farm') }}" class="nav-link">
                     <i class="fas fa-tractor"></i>
                         <p>
                             Farm Equipemnet
@@ -77,23 +53,23 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('workshop.workshop') }}" class="nav-link">
+                    <a href="{{ route('equipment.workshop') }}" class="nav-link">
                     <i class="fas fa-tools"></i>
                         <p>
-                            Workshop Equipement
+                            equipment Equipment
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('workshop.returned') }}" class="nav-link">
+                    <a href="{{ route('equipment.returned') }}" class="nav-link">
                     <i class="fas fa-redo"></i>
                         <p>
-                            Returned Equipement
+                            Returned Equipment
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('workshop.taken_non_returnable') }}" class="nav-link">
+                    <a href="{{ route('equipment.taken_non_returnable') }}" class="nav-link">
                     <i class="fas fa-handshake-slash"></i>
                         <p>
                             Taken non returnable
@@ -101,7 +77,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('workshop.repaired') }}" class="nav-link">
+                    <a href="{{ route('equipment.repaired') }}" class="nav-link">
                     <i class="fas fa-check-circle"></i>
                         <p>
                             Repaired
@@ -109,7 +85,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('workshop.disposed') }}" class="nav-link">
+                    <a href="{{ route('equipment.disposed') }}" class="nav-link">
                     <i class="fas fa-trash"></i>
                         <p>
                             Disposed
@@ -117,18 +93,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('workshop.general_in') }}" class="nav-link">
+                    <a href="{{ route('equipment.general_in') }}" class="nav-link">
                     <i class="fas fa-clipboard-list"></i>
                         <p>
-                            General report of Brought Equipement
+                            General report of Brought Equipment
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('workshop.general') }}" class="nav-link">
+                    <a href="{{ route('equipment.general') }}" class="nav-link">
                     <i class="fas fa-clipboard-list"></i>
                         <p>
-                            General report of taken Equipement
+                            General report of taken Equipment
                         </p>
                     </a>
                 </li>

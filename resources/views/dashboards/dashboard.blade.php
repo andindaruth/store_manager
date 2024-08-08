@@ -105,7 +105,7 @@
       <i class="fas fa-wrench"></i>
 
       </div>
-      <a href="{{ route('workshop.actions') }}" class="small-box-footer">Go to dashboard <i class="fas fa-arrow-circle-right"></i></a>
+      <a href="{{ route('equipment.actions') }}" class="small-box-footer">Go to dashboard <i class="fas fa-arrow-circle-right"></i></a>
     </div>
   </div>
   <!-- ./col -->

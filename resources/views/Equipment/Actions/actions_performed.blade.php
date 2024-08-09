@@ -40,7 +40,7 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $equipment->action }}</td>
                                     <td>{{ $equipment->quantity_affected }}</td>
-                                    <td><a href="{{ route('equipment.reverse') }}">Reverse</a></td>
+                                    <td><a href="{{ route('equipment.actions.reverse') }}">Reverse</a></td>
                                 </tr>
                             @endforeach
                         @else

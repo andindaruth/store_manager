@@ -216,22 +216,22 @@ Route::middleware(['auth'])->group(function () {
 
 //EquipmentAction
 Route::middleware(['auth'])->group(function () {
-  Route::get('/equipment/returned', [EquipmentActionController::class, 'returned'])->name('equipment.returned');
-  Route::get('/equipment/taken_non_returnable', [EquipmentActionController::class, 'taken_non_returnable'])->name('equipment.taken_non_returnable');
-  Route::get('/equipment/repaired', [EquipmentActionController::class, 'repaired'])->name('equipment.repaired');
-  Route::get('/equipment/disposed', [EquipmentActionController::class, 'disposed'])->name('equipment.disposed');
-  Route::get('/equipment/general', [EquipmentActionController::class, 'general'])->name('equipment.general');
-  Route::get('/equipment/pending_return', [EquipmentActionController::class, 'pending_return'])->name('equipment.pending_return');
-  Route::get('/equipment/pending_repair', [EquipmentActionController::class, 'pending_repair'])->name('equipment.pending_repair');
-  Route::get('/equipment/actions_performed', [EquipmentActionController::class, 'actions_performed'])->name('equipment.actions_performed');
-  Route::get('/equipment/return', [EquipmentActionController::class, 'return'])->name('equipment.return');
-  Route::get('/equipment/repair', [EquipmentActionController::class, 'repair'])->name('equipment.repair');
-  Route::get('/equipment/reverse', [EquipmentActionController::class, 'reverse'])->name('equipment.reverse');
-  Route::get('/equipment/give', [EquipmentActionController::class, 'give'])->name('equipment.give');
-  Route::get('/equipment/add', [EquipmentActionController::class, 'add'])->name('equipment.add');
-  Route::get('/equipment/recommend_for_repair', [EquipmentActionController::class, 'recommend_for_repair'])->name('equipment.recommend_for_repair');
-  Route::get('/equipment/dispose', [EquipmentActionController::class, 'dispose'])->name('equipment.dispose');
-  Route::get('/equipment/general_in', [EquipmentActionController::class, 'general_in'])->name('equipment.general_in');
+  Route::get('/equipment/returned', [EquipmentActionController::class, 'returned'])->name('equipment.actions.returned');
+  Route::get('/equipment/taken_non_returnable', [EquipmentActionController::class, 'taken_non_returnable'])->name('equipment.actions.taken_non_returnable');
+  Route::get('/equipment/repaired', [EquipmentActionController::class, 'repaired'])->name('equipment.actions.repaired');
+  Route::get('/equipment/disposed', [EquipmentActionController::class, 'disposed'])->name('equipment.actions.disposed');
+  Route::get('/equipment/general', [EquipmentActionController::class, 'general'])->name('equipment.actions.general');
+  Route::get('/equipment/pending_return', [EquipmentActionController::class, 'pending_return'])->name('equipment.actions.pending_return');
+  Route::get('/equipment/pending_repair', [EquipmentActionController::class, 'pending_repair'])->name('equipment.actions.pending_repair');
+  Route::get('/equipment/actions_performed', [EquipmentActionController::class, 'actions_performed'])->name('equipment.actions.actions_performed');
+  Route::get('/equipment/return', [EquipmentActionController::class, 'return'])->name('equipment.actions.return');
+  Route::get('/equipment/repair', [EquipmentActionController::class, 'repair'])->name('equipment.actions.repair');
+  Route::get('/equipment/reverse', [EquipmentActionController::class, 'reverse'])->name('equipment.actions.reverse');
+  Route::get('/equipment/give', [EquipmentActionController::class, 'give'])->name('equipment.actions.give');
+  Route::get('/equipment/add', [EquipmentActionController::class, 'add'])->name('equipment.actions.add');
+  Route::get('/equipment/recommend_for_repair', [EquipmentActionController::class, 'recommend_for_repair'])->name('equipment.actions.recommend_for_repair');
+  Route::get('/equipment/dispose', [EquipmentActionController::class, 'dispose'])->name('equipment.actions.dispose');
+  Route::get('/equipment/general_in', [EquipmentActionController::class, 'general_in'])->name('equipment.actions.general_in');
 
 });
 

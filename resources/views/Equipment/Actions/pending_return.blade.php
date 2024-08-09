@@ -43,7 +43,7 @@
                                     <td>{{ $equipment->quantity_taken }}</td>
                                     <td>{{ $equipment->quantity_returned }}</td>
                                     <td>{{ $equipment->quantity_pending_taken }}</td>
-                                    <td><a href="{{ route('equipment.return') }}">Return</a></td>
+                                    <td><a href="{{ route('equipment.actions.return') }}">Return</a></td>
                                 </tr>
                             @endforeach
                         @else

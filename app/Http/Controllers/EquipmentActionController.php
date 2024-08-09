@@ -15,7 +15,7 @@ class EquipmentActionController extends Controller
     {
         $user = Auth::user();
         $equipment = Equipment::all();
-        return view('equipment.returned', compact('equipment', 'user'));
+        return view('equipment.actions.returned', compact('equipment', 'user'));
     }
 
     //taken_non_returnable
@@ -23,7 +23,7 @@ class EquipmentActionController extends Controller
     {
         $user = Auth::user();
         $equipment = Equipment::all();
-        return view('equipment.taken_non_returnable', compact('equipment', 'user'));
+        return view('equipment.actions.taken_non_returnable', compact('equipment', 'user'));
     }
 
    //repaired
@@ -31,7 +31,7 @@ public function repaired()
 {
     $user = Auth::user();
     $equipment = Equipment::all();
-    return view('equipment.repaired', compact('equipment', 'user'));
+    return view('equipment.actions.repaired', compact('equipment', 'user'));
 } 
 
 //disposed
@@ -39,7 +39,7 @@ public function disposed()
     {
         $user = Auth::user();
         $equipment = Equipment::all();
-        return view('equipment.disposed', compact('equipment', 'user'));
+        return view('equipment.actions.disposed', compact('equipment', 'user'));
     }
 
     //general in
@@ -47,7 +47,7 @@ public function general_in()
 {
     $user = Auth::user();
     $equipment = Equipment::all();
-    return view('equipment.general_in', compact('equipment', 'user'));
+    return view('equipment.actions.general_in', compact('equipment', 'user'));
 }
 
 //general Out
@@ -55,7 +55,7 @@ public function general()
     {
         $user = Auth::user();
         $equipment = Equipment::all();
-        return view('equipment.general', compact('equipment', 'user'));
+        return view('equipment.actions.general', compact('equipment', 'user'));
     }
 
 //pending return
@@ -63,7 +63,7 @@ public function pending_return()
 {
     $user = Auth::user();
     $equipment = Equipment::all();
-    return view('equipment.pending_return', compact('equipment', 'user'));
+    return view('equipment.actions.pending_return', compact('equipment', 'user'));
 }
 
 //pending repair
@@ -71,7 +71,7 @@ public function pending_repair()
 {
     $user = Auth::user();
     $equipment = Equipment::all();
-    return view('equipment.pending_repair', compact('equipment', 'user'));
+    return view('equipment.actions.pending_repair', compact('equipment', 'user'));
 }
 
 //Actions Performed
@@ -79,7 +79,7 @@ public function actions_performed()
 {
     $user = Auth::user();
     $equipment = Equipment::all();
-    return view('equipment.actions_performed', compact('equipment', 'user'));
+    return view('equipment.actions.actions_performed', compact('equipment', 'user'));
 }
 
   //Functionalities that affect quantity in the database
@@ -89,7 +89,7 @@ public function return()
 {
     $user = Auth::user();
     $equipment = Equipment::all();
-    return view('equipment.return', compact('equipment', 'user'));
+    return view('equipment.actions.return', compact('equipment', 'user'));
 }
 
   //Repair
@@ -97,7 +97,7 @@ public function return()
   {
       $user = Auth::user();
       $equipment = Equipment::all();
-      return view('equipment.repair', compact('equipment', 'user'));
+      return view('equipment.actions.repair', compact('equipment', 'user'));
   }
 
 //Reverse
@@ -105,7 +105,7 @@ public function reverse()
 {
     $user = Auth::user();
     $equipment = Equipment::all();
-    return view('equipment.reverse', compact('equipment', 'user'));
+    return view('equipment.actions.reverse', compact('equipment', 'user'));
 }
 
 //Give out
@@ -113,28 +113,28 @@ public function give()
 {
     $user = Auth::user();
     $equipment = Equipment::all();
-    return view('equipment.give', compact('equipment', 'user'));
+    return view('equipment.actions.give', compact('equipment', 'user'));
 }
 //add
 public function add()
 {
     $user = Auth::user();
     $equipment = Equipment::all();
-    return view('equipment.add', compact('equipment', 'user'));
+    return view('equipment.actions.add', compact('equipment', 'user'));
 }
 //Recommend for repair
 public function recommend_for_repair()
 {
     $user = Auth::user();
     $equipment = Equipment::all();
-    return view('equipment.recommend_for_repair', compact('equipment', 'user'));
+    return view('equipment.actions.recommend_for_repair', compact('equipment', 'user'));
 }
 //Dispose
 public function dispose()
 {
     $user = Auth::user();
     $equipment = Equipment::all();
-    return view('equipment.dispose', compact('equipment', 'user'));
+    return view('equipment.actions.dispose', compact('equipment', 'user'));
 }
 
 }

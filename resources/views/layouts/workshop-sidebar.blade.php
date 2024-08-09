@@ -61,7 +61,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('equipment.returned') }}" class="nav-link">
+                    <a href="{{ route('equipment.actions.returned') }}" class="nav-link">
                     <i class="fas fa-redo"></i>
                         <p>
                             Returned Equipment
@@ -69,7 +69,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('equipment.taken_non_returnable') }}" class="nav-link">
+                    <a href="{{ route('equipment.actions.taken_non_returnable') }}" class="nav-link">
                     <i class="fas fa-handshake-slash"></i>
                         <p>
                             Taken non returnable
@@ -77,7 +77,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('equipment.repaired') }}" class="nav-link">
+                    <a href="{{ route('equipment.actions.repaired') }}" class="nav-link">
                     <i class="fas fa-check-circle"></i>
                         <p>
                             Repaired
@@ -85,7 +85,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('equipment.disposed') }}" class="nav-link">
+                    <a href="{{ route('equipment.actions.disposed') }}" class="nav-link">
                     <i class="fas fa-trash"></i>
                         <p>
                             Disposed
@@ -93,7 +93,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('equipment.general_in') }}" class="nav-link">
+                    <a href="{{ route('equipment.actions.general_in') }}" class="nav-link">
                     <i class="fas fa-clipboard-list"></i>
                         <p>
                             General report of Brought Equipment
@@ -101,7 +101,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('equipment.general') }}" class="nav-link">
+                    <a href="{{ route('equipment.actions.general') }}" class="nav-link">
                     <i class="fas fa-clipboard-list"></i>
                         <p>
                             General report of taken Equipment

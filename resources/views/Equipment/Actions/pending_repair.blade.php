@@ -44,7 +44,7 @@
                                     <td>{{ $equipment->quantity_repaired }}</td>
                                     <td>{{ $equipment->quantity_pending_repair }}</td>
                                     <td>{{ $equipment->days_pending }}</td>
-                                    <td><a href="{{ route('equipment.repair') }}">Repair</a></td>
+                                    <td><a href="{{ route('equipment.actions.repair') }}">Repair</a></td>
                                 </tr>
                             @endforeach
                         @else

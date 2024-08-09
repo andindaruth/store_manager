@@ -7,11 +7,11 @@
     <ol class="breadcrumb float-sm-right">
        <li> <a href="{{ route('equipment.create') }}" class="btn float-right bg-success"><i class="fas fa-plus"></i> Add new
         </a></li>
-        <li><a href="{{ route('equipment.pending_return') }}" class="btn float-right bg-success"> <i class="fas fa-redo"></i> Return
+        <li><a href="{{ route('equipment.actions.pending_return') }}" class="btn float-right bg-success"> <i class="fas fa-redo"></i> Return
         </a></li>
-      <li>  <a href="{{ route('equipment.pending_repair') }}" class="btn float-right bg-success"><i class="fas fa-exclamation-triangle"></i> Repair
+      <li>  <a href="{{ route('equipment.actions.pending_repair') }}" class="btn float-right bg-success"><i class="fas fa-exclamation-triangle"></i> Repair
         </a></li> 
-      <li>  <a href="{{ route('equipment.actions_performed') }}" class="btn float-right bg-success"><i class="fa fa-undo"></i> Reverse
+      <li>  <a href="{{ route('equipment.actions.actions_performed') }}" class="btn float-right bg-success"><i class="fa fa-undo"></i> Reverse
         </a></li>
     </ol>
 @endsection
@@ -43,10 +43,10 @@
                                     </td>
                                     <td>{{ $equipment->name }}</td>
                                     <td>{{ $equipment->quantity_in_stock }}</td>
-                                    <td><a href="{{ route('equipment.give') }}">Give out</a></td>
-                                    <td><a href="{{ route('equipment.add') }}">Add quantity</a></td>
-                                    <td><a href="{{ route('equipment.recommend_for_repair') }}">Recommend for repair</a></td>
-                                    <td><a href="{{ route('equipment.dispose') }}">Dispose</a></td>
+                                    <td><a href="{{ route('equipment.actions.give') }}">Give out</a></td>
+                                    <td><a href="{{ route('equipment.actions.add') }}">Add quantity</a></td>
+                                    <td><a href="{{ route('equipment.actions.recommend_for_repair') }}">Recommend for repair</a></td>
+                                    <td><a href="{{ route('equipment.actions.dispose') }}">Dispose</a></td>
                                                    
                                 </tr>
                             @endforeach

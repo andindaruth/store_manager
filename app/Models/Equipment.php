@@ -18,9 +18,4 @@ class Equipment extends Model
         'category3',
         'quantity_in_stock',
     ];
-
-    public function actions()
-    {
-        return $this->hasMany(Action::class);
-    }
 }

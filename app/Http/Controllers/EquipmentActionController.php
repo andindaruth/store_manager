@@ -9,14 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class EquipmentActionController extends Controller
 {
-     //actions
-        public function actions()
-        {
-            $user = Auth::user();
-            $equipment = Equipment::all(); // Retrieve all equipment
-    
-            return view('equipment.actions', compact('equipment', 'user'));
-        }
 
 //returned
     public function returned()

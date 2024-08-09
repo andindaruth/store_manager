@@ -20,11 +20,15 @@ class EquipmentAction extends Model
 
     public function equipment()
     {
-        return $this->belongsTo(Equipment::class);
-    }
+        return $this->belongsTo(equipment::class);
+}
+public function person()
+{
+    return $this->belongsTo(People::class);
+}
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
 }

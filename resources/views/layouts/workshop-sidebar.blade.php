@@ -56,7 +56,7 @@
                     <a href="{{ route('equipment.workshop') }}" class="nav-link">
                     <i class="fas fa-tools"></i>
                         <p>
-                            equipment Equipment
+                            Workshop Equipment
                         </p>
                     </a>
                 </li>

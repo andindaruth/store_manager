@@ -205,8 +205,8 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/equipment/actions', [EquipmentController::class, 'index'])->name('equipment.actions');
   Route::get('/equipment/create', [EquipmentController::class, 'create'])->name('equipment.create');
   Route::post('/equipment', [EquipmentController::class, 'store'])->name('equipment.store');
-  Route::get('/items/{id}/edit', [EquipmentController::class, 'edit'])->name('equipment.edit');
-  Route::put('/items/{id}', [EquipmentController::class, 'update'])->name('equipment.update');
+  Route::get('/equipment/{id}/edit', [EquipmentController::class, 'edit'])->name('equipment.edit');
+  Route::put('/equipment/{id}', [EquipmentController::class, 'update'])->name('equipment.update');
   Route::get('/equipment/items', [EquipmentController::class, 'item'])->name('equipment.items');
   Route::get('/equipment/tools', [EquipmentController::class, 'tool'])->name('equipment.tools');
   Route::get('/equipment/spare_parts', [EquipmentController::class, 'spare_part'])->name('equipment.spare_parts');

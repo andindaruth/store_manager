@@ -39,8 +39,7 @@
                         @unless ($equipment->isEmpty())
                             @foreach ($equipment as $equipment)                          
                                 <tr class="text-nowrap">
-                                    <td><a href="{{ route('equipment.edit', ['equipment' => $equipment]) }}">{{ $equipment->image }}</a>
-                                    </td>
+                                   <td>{{ $equipment->image }}</td>
                                     <td>{{ $equipment->name }}</td>
                                     <td>{{ $equipment->quantity_in_stock }}</td>
                                     <td><a href="{{ route('equipment.actions.give') }}">Give out</a></td>

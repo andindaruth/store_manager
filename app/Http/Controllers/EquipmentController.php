@@ -28,13 +28,14 @@ class EquipmentController extends Controller
     {
         // Validate the input data from
         $validatedData = $request->validate([ 
+            'image' => 'nullable|string|max:255',
             'name' => 'required|string|max:255',
-            'image' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'nullable|string|max:255',
             'category1' => 'required|string',
             'category2' => 'required|string',
             'category3' => 'required|string',
-            'quantity_in_stock' => 'required|integer',
+            'quantity_in_stock' => 'required|integer|min:0',
+            're-order_value' => 'required|integer|min:0',
         ]);
 
         // Create a new Equipment
@@ -55,13 +56,14 @@ class EquipmentController extends Controller
     {
         // Validate the input data
         $validatedData = $request->validate([
+            'image' => 'nullable|string|max:255',
             'name' => 'required|string|max:255',
-            'image' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'nullable|string|max:255',
             'category1' => 'required|string',
             'category2' => 'required|string',
             'category3' => 'required|string',
-            'quantity_in_stock' => 'required|integer',
+            'quantity_in_stock' => 'required|integer|min:0',
+            're-order_value' => 'required|integer|min:0',
         ]);
 
         // Update the equipment with the validated data
@@ -105,132 +107,5 @@ class EquipmentController extends Controller
         $equipment = Equipment::all();
         return view('equipment.workshop', compact('equipment', 'user'));
     }
-
-    //returned
-    public function returned()
-    {
-        $user = Auth::user();
-        $equipment = Equipment::all();
-        return view('equipment.returned', compact('equipment', 'user'));
-    }
-
-    //taken_non_returnable
-    public function taken_non_returnable()
-    {
-        $user = Auth::user();
-        $equipment = Equipment::all();
-        return view('equipment.taken_non_returnable', compact('equipment', 'user'));
-    }
-
-   //repaired
-public function repaired()
-{
-    $user = Auth::user();
-    $equipment = Equipment::all();
-    return view('equipment.repaired', compact('equipment', 'user'));
-} 
-
-//disposed
-public function disposed()
-    {
-        $user = Auth::user();
-        $equipment = Equipment::all();
-        return view('equipment.disposed', compact('equipment', 'user'));
-    }
-
-    //general in
-public function general_in()
-{
-    $user = Auth::user();
-    $equipment = Equipment::all();
-    return view('equipment.general_in', compact('equipment', 'user'));
-}
-
-//general Out
-public function general()
-    {
-        $user = Auth::user();
-        $equipment = Equipment::all();
-        return view('equipment.general', compact('equipment', 'user'));
-    }
-
-//pending return
-public function pending_return()
-{
-    $user = Auth::user();
-    $equipment = Equipment::all();
-    return view('equipment.pending_return', compact('equipment', 'user'));
-}
-
-//pending repair
-public function pending_repair()
-{
-    $user = Auth::user();
-    $equipment = Equipment::all();
-    return view('equipment.pending_repair', compact('equipment', 'user'));
-}
-
-//Actions Performed
-public function actions_performed()
-{
-    $user = Auth::user();
-    $equipment = Equipment::all();
-    return view('equipment.actions_performed', compact('equipment', 'user'));
-}
-
-  //Functionalities that affect quantity in the database
-
-  //Return
-public function return()
-{
-    $user = Auth::user();
-    $equipment = Equipment::all();
-    return view('equipment.return', compact('equipment', 'user'));
-}
-
-  //Repair
-  public function repair()
-  {
-      $user = Auth::user();
-      $equipment = Equipment::all();
-      return view('equipment.repair', compact('equipment', 'user'));
-  }
-
-//Reverse
-public function reverse()
-{
-    $user = Auth::user();
-    $equipment = Equipment::all();
-    return view('equipment.reverse', compact('equipment', 'user'));
-}
-
-//Give out
-public function give()
-{
-    $user = Auth::user();
-    $equipment = Equipment::all();
-    return view('equipment.give', compact('equipment', 'user'));
-}
-//add
-public function add()
-{
-    $user = Auth::user();
-    $equipment = Equipment::all();
-    return view('equipment.add', compact('equipment', 'user'));
-}
-//Recommend for repair
-public function recommend_for_repair()
-{
-    $user = Auth::user();
-    $equipment = Equipment::all();
-    return view('equipment.recommend_for_repair', compact('equipment', 'user'));
-}
-//Dispose
-public function dispose()
-{
-    $user = Auth::user();
-    $equipment = Equipment::all();
-    return view('equipment.dispose', compact('equipment', 'user'));
-}
 
 }

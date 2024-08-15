@@ -33,7 +33,7 @@
                             @foreach ($equipment as $item)                          
                                 <tr class="text-nowrap">
                                     <td>
-                                        <img src="{{ Storage::url($item->image) }}" alt="{{ $item->name }}" class="img-fluid" style="max-width: 50px; height: 75px;">                                 </td>
+                                        <img src="{{ Storage::url($item->image) }}" alt="{{ $item->name }}" class="img-fluid" style="max-width: 60px; height: 75px;">                                 </td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->quantity_in_stock }}</td>
                                     <td><a href="{{ route('equipment.actions.give') }}">Give out</a></td>

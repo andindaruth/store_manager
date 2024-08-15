@@ -13,12 +13,15 @@ return new class extends Migration
     {
         Schema::create('equipment_actions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('equipment_id')->constrained('equipment')->onDelete('cascade');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->enum('action_type', ['give_out', 'add_quantity', 'recommend_for_repair', 'repair', 'dispose', 'return']);
-            $table->integer('quantity');
+            $table->unsignedBigInteger('person_id')->nullable();
+            $table->foreign('person_id')->references('id')->on('people');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('equipment_id')->nullable();
+            $table->foreign('equipment_id')->references('id')->on('equipment');
+            $table->string('quantity_affected')->nullable();
+            $table->string('type')->nullable();
             $table->date('date');
-            $table->string('remarks')->nullable();
             $table->timestamps();
         });
     }

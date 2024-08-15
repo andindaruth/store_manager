@@ -17,5 +17,6 @@ class Equipment extends Model
         'category2',
         'category3',
         'quantity_in_stock',
+        're_order_value',
     ];
 }

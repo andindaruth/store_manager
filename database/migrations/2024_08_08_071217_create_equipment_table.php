@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('category2');
             $table->string('category3');
             $table->decimal('quantity_in_stock');
-            $table->decimal('re-order_value');
+            $table->decimal('re_order_value');
             $table->timestamps();
         });
     }

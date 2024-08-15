@@ -5,27 +5,20 @@
 
 @section('bread_crumb')
     <ol class="breadcrumb float-sm-right">
-       <li> <a href="{{ route('equipment.create') }}" class="btn float-right bg-success"><i class="fas fa-plus"></i> Add new
-        </a></li>
-        <li><a href="{{ route('equipment.actions.pending_return') }}" class="btn float-right bg-success"> <i class="fas fa-redo"></i> Return
-        </a></li>
-      <li>  <a href="{{ route('equipment.actions.pending_repair') }}" class="btn float-right bg-success"><i class="fas fa-exclamation-triangle"></i> Repair
-        </a></li> 
-      <li>  <a href="{{ route('equipment.actions.actions_performed') }}" class="btn float-right bg-success"><i class="fa fa-undo"></i> Reverse
-        </a></li>
+        <li><a href="{{ route('equipment.create') }}" class="btn float-right bg-success"><i class="fas fa-plus"></i> Add new</a></li>
+        <li><a href="{{ route('equipment.actions.pending_return') }}" class="btn float-right bg-success"><i class="fas fa-redo"></i> Return</a></li>
+        <li><a href="{{ route('equipment.actions.pending_repair') }}" class="btn float-right bg-success"><i class="fas fa-exclamation-triangle"></i> Repair</a></li>
+        <li><a href="{{ route('equipment.actions.actions_performed') }}" class="btn float-right bg-success"><i class="fa fa-undo"></i> Reverse</a></li>
     </ol>
 @endsection
 
 @section('main_content')
-
     <div class="col-sm-12">
         <div class="card card-success card-outline">
             <div class="card-body table-responsive">
                 <table id="example3" class="table table-hover table-head-fixed table-sm table-striped">
                     <thead>
                         <tr>
-                            
-                            
                             <th>Image</th>
                             <th>Name</th>
                             <th>Quantity in stock</th>
@@ -37,16 +30,16 @@
                     </thead>
                     <tbody>
                         @unless ($equipment->isEmpty())
-                            @foreach ($equipment as $equipment)                          
+                            @foreach ($equipment as $item)                          
                                 <tr class="text-nowrap">
-                                   <td>{{ $equipment->image }}</td>
-                                    <td>{{ $equipment->name }}</td>
-                                    <td>{{ $equipment->quantity_in_stock }}</td>
+                                    <td>
+                                        <img src="{{ Storage::url($item->image) }}" alt="{{ $item->name }}" class="img-fluid" style="max-width: 50px; height: 75px;">                                 </td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->quantity_in_stock }}</td>
                                     <td><a href="{{ route('equipment.actions.give') }}">Give out</a></td>
                                     <td><a href="{{ route('equipment.actions.add') }}">Add quantity</a></td>
                                     <td><a href="{{ route('equipment.actions.recommend_for_repair') }}">Recommend for repair</a></td>
-                                    <td><a href="{{ route('equipment.actions.dispose') }}">Dispose</a></td>
-                                                   
+                                    <td><a href="{{ route('equipment.actions.dispose') }}">Dispose</a></td>               
                                 </tr>
                             @endforeach
                         @else
@@ -61,5 +54,4 @@
             </div> <!-- /.card-body -->
         </div>
     </div>
-
 @endsection

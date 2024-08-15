@@ -16,6 +16,7 @@ class EquipmentController extends Controller
         $user = Auth::user();
         return view('equipment.actions', compact('equipment', 'user'));
     }
+
     //create form
     public function create()
     {
@@ -26,17 +27,23 @@ class EquipmentController extends Controller
     // Store a new equipment in the database
     public function store(Request $request)
     {
-        // Validate the input data from
+        // Validate the input data
         $validatedData = $request->validate([ 
-            'image' => 'nullable|string|max:255',
-            'name' => 'required|string|max:255',
+            'name' => 'nullable|string|max:255',
             'description' => 'nullable|string|max:255',
             'category1' => 'required|string',
             'category2' => 'required|string',
             'category3' => 'required|string',
             'quantity_in_stock' => 'required|integer|min:0',
-            're-order_value' => 'required|integer|min:0',
+            're_order_value' => 'required|integer|min:0',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+    
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('equipment_images', 'public');
+            $validatedData['image'] = $imagePath;
+        }
 
         // Create a new Equipment
         $equipment = new Equipment();
@@ -56,14 +63,14 @@ class EquipmentController extends Controller
     {
         // Validate the input data
         $validatedData = $request->validate([
-            'image' => 'nullable|string|max:255',
             'name' => 'required|string|max:255',
             'description' => 'nullable|string|max:255',
             'category1' => 'required|string',
             'category2' => 'required|string',
             'category3' => 'required|string',
             'quantity_in_stock' => 'required|integer|min:0',
-            're-order_value' => 'required|integer|min:0',
+            're_order_value' => 'required|integer|min:0',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Update the equipment with the validated data

@@ -15,11 +15,10 @@ return new class extends Migration
             $table->boolean('is_reversed')->default(0);
             $table->text('reversal_reason')->nullable();
             $table->unsignedBigInteger('reversed_by')->nullable();
-            $table->foreign('reversed_by')->references('id')->on('actions')->onDelete('set null');
+            $table->foreign('reversed_by')->references('id')->on('equipment_actions')->onDelete('set null');
             $table->unsignedBigInteger('reverses')->nullable();
-            $table->foreign('reverses')->references('id')->on('actions')->onDelete('set null');
+            $table->foreign('reverses')->references('id')->on('quipment_actions')->onDelete('set null');
         });
-
     }
 
     /**

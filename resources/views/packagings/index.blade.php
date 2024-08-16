@@ -27,19 +27,18 @@
                             <th>category</th>
                             <th>Rate</th>                           
                             <th>unit cost</th>
-                            <th>Bal.packs</th>
                             <th>Bal.Qty</th>
-                            <th>Bal.cost</th>
                             <th>Bal.Tons</th>
+                            <th>Bal.cost</th>
                         </tr>
                     </thead>
                     <tbody>
-                    @unless ($bell_packagings->isEmpty())
-                            @foreach ($bell_packagings as $packaging)                          
+                    @unless ($packagings->isEmpty())
+                            @foreach ($packagings as $packaging)                          
                             @php
                            
                             $balance_cost =  $packaging->balance * $packaging->unit_price;
-                            $balance_Ha = $packaging->balance / $packaging->rate;
+                            $balance_tons = ($packaging->balance * $packaging->rate) / 1000;
 
                             @endphp
                                 <tr class="text-nowrap">
@@ -50,10 +49,10 @@
                                     <td>{{ $packaging->category }}</td>
                                     <td>{{ $packaging->rate }} @if ($packaging->category === 'roll') kg/kglm @else kg/psc @endif</td>
                                     <td>{{ number_format($packaging->unit_price, 0, '.', ',') }}</td>
+                                    {{-- <td>{{ number_format($packaging->balance, 0, '.', ',') }}</td> --}}
                                     <td>{{ number_format($packaging->balance, 0, '.', ',') }}</td>
-                                    <td>{{ number_format($packaging->balance, 0, '.', ',') }}</td>
-                                    <td>{{ number_format($balance_cost, 0, '.', ',') }} </td>  
                                     <td>{{ number_format($balance_tons, 2, '.', ',') }}</td>                          
+                                    <td>{{ number_format($balance_cost, 0, '.', ',') }} </td>  
 
                                 </tr>
                             @endforeach

@@ -56,9 +56,16 @@
                             <div class="text-sm text-danger">{{ $message }}</div>
                         @enderror
                     </div>   
-                      
-                   
                     <div class="form-group">
+                        <label for="purpose">Purpose *</label>
+                        <input type="text" class="form-control" id="purpose" name="purpose" value="{{ $packaging->purpose }}"
+                            placeholder="Enter purpose" >
+                        @error('purpose')
+                            <div class="text-sm text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>                     
+                    
+                   <div class="form-group">
                         <label for="rate">Rate *</label>
                         <input type="text" class="form-control" id="rate" name="rate" value="{{ $packaging->rate }}"
                              required>

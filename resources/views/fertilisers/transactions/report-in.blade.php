@@ -94,7 +94,7 @@
                             <th>Delivery Note No.</th>
                             <th>Internal delivery No.</th>
                             <th>Received By</th>
-                            <th>No. of Packs</th>
+                            <th>Packs</th>
                             <th>Qty (Kgs)</th>
                             <th>Unit cost (ugx) </th>
                             <th>Trxn cost(UGX)</th>

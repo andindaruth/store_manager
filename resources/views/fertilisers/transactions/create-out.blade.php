@@ -67,7 +67,8 @@
                         <label for="destination">Destination *</label>
                         <select class="form-control select2" id="destination" name="destination" required>
                             <option value="">--Select Destination</option>
-                            <option value="Factory"> Factory</option>
+                            <option value="Factory"> Farm</option>
+                            <option value="Others"> Tangi Farm</option>
                             <option value="Parent Seed">Parent Seed</option>
                             <option value="Out Grower">Out Grower</option>
                             <option value="Research">Research</option>

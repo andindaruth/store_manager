@@ -64,9 +64,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="person_id">Driver *</label>
+                        <label for="person_id">Brought By *</label>
                         <select class="form-control select2" id="person_id" name="person_id" required>
-                            <option value="">--Select Driver</option>
+                            <option value="">--Select Person</option>
                             @foreach ($drivers as $driver)
                                 <option value="{{ $driver->id }}">{{ $driver->name }}</option>
                             @endforeach

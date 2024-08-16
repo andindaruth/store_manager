@@ -29,7 +29,7 @@
                             <th>Receipt No.</th>
                             <th>Destination</th>
                             <th>Issued By</th>
-                            <th>No. Of Packs</th>
+                            <th>Packs</th>
                             <th>Qty (Kgs)</th>
                     
                             <th class="text-nowrap">Action/ Comment</th>

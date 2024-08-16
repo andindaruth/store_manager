@@ -21,19 +21,22 @@
                 <table id="example2" class="table table-hover table-head-fixed table-sm table-striped">
                     <thead>
                         <tr>
-                            
+                        <th>Code</th>
                             <th>Name</th>
-                            <th>Code</th>
+                            
                             <th>Purpose</th>
-                            <th>Pack Qty</th>
-                            <th>Rate</th>
-                            <th>Tons</th>
-                            <th>unit cost</th>
-                            <th>pack cost</th>
+
+                            <th>Pack.Qty</th>
+                            <th>Units</th>
+                            <th>Rate(/Ton)</th>
+                            
+                            <th>Pack.Ton</th>
+                            <th>unit.cost</th>
+                            <th>pack.cost</th>
                             <th>Bal.packs</th>
                             <th>Bal.Qty</th>
                             <th>Bal.cost</th>
-                            <th>Bal.Tons</th>
+                            <th>Bal.Ton</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,20 +50,21 @@
                             $balance_tons = $balace_q / $chemical->rate;
                             @endphp
                                 <tr class="text-nowrap">
-                                    <td><a href="{{ route('chemicals.edit', ['chemical' => $chemical]) }}">{{ $chemical->name }}</a>
+                                    <td><a href="{{ route('chemicals.edit', ['chemical' => $chemical]) }}">{{ $chemical->code }}</a>
                                     </td>
-                                    <td>{{ $chemical->code }}</td>
+                                    <td>{{ $chemical->name }}</td>
                                     <td>{{ $chemical->purpose }}</td>
                                     <td>{{ $chemical->quantity_per_pack }}</td>
-                                    <td>{{ $chemical->rate }} @if ($chemical->unit_of_measure === 'lt') lt/ton @else Kg/ton @endif</td>
+                                    <td>{{ $chemical->unit_of_measure }}</td>
+                                    <td>{{ $chemical->rate }} </td>
                                     
-                                    <td>{{ number_format($tons, 2, '.', ',') }}</td>
+                                    <td>{{ number_format($tons, 1, '.', ',') }}</td>
                                     <td>{{ number_format($chemical->unit_price, 0, '.', ',') }}</td>
                                     <td>{{ number_format($pack_cost, 0, '.', ',') }}</td>
                                     <td>{{ number_format($chemical->balance, 0, '.', ',') }}</td>
                                     <td>{{ $balace_q }}</td>
                                     <td>{{ number_format($balance_cost, 0, '.', ',') }} </td>  
-                                    <td>{{ number_format($balance_tons, 2, '.', ',') }}</td>                          
+                                    <td>{{ number_format($balance_tons, 1, '.', ',') }}</td>                          
 
                                 </tr>
                             @endforeach
@@ -88,14 +92,16 @@
                     <thead>
                         <tr>
                             
-                            <th>Name</th>
+                            
                             <th>Code</th>
+                            <th>Name</th>
                             <th>Purpose</th>
-                            <th>Pack Qty</th>
-                            <th>Rate</th>
-                            <th>Ha</th>
-                            <th>unit cost</th>
-                            <th>pack cost</th>
+                            <th>Pack.Qty</th>
+                            <th>Units</th>
+                            <th>Rate(/Ha)</th>  
+                            <th>Pack.Ha</th>
+                            <th>unit.cost</th>
+                            <th>pack.cost</th>
                             <th>Bal.packs</th>
                             <th>Bal.Qty</th>
                             <th>Bal.cost</th>
@@ -114,20 +120,20 @@
                             $balance_Ha = $balace_q / $chemical->rate;
                             @endphp
                                 <tr class="text-nowrap">
-                                    <td><a href="{{ route('chemicals.edit', ['chemical' => $chemical]) }}">{{ $chemical->name }}</a>
+                                    <td><a href="{{ route('chemicals.edit', ['chemical' => $chemical]) }}">{{ $chemical->code }}</a>
                                     </td>
-                                    <td>{{ $chemical->code }}</td>
+                                    <td>{{ $chemical->name }}</td>
                                     <td>{{ $chemical->purpose }}</td>
-                                    <td>{{ $chemical->quantity_per_pack }}</td>
-                                    <td>{{ $chemical->rate }} @if ($chemical->unit_of_measure === 'lt') lt/Ha @else Kg/Ha @endif</td>
-                                    
-                                    <td>{{ number_format($ha, 2, '.', ',') }}</td>
+                                    <td>{{ $chemical->quantity_per_pack }} </td>
+                                    <td>{{ $chemical->unit_of_measure }}</td>
+                                    <td>{{ $chemical->rate }} </td>
+                                    <td>{{ number_format($ha, 1, '.', ',') }}</td>
                                     <td>{{ number_format($chemical->unit_price, 0, '.', ',') }}</td>
                                     <td>{{ number_format($pack_cost, 0, '.', ',') }}</td>
                                     <td>{{ number_format($chemical->balance, 0, '.', ',') }}</td>
                                     <td>{{ $balace_q }}</td>
                                     <td>{{ number_format($balance_cost, 0, '.', ',') }} </td>  
-                                    <td>{{ number_format($balance_Ha, 2, '.', ',') }}</td>                          
+                                    <td>{{ number_format($balance_Ha, 1, '.', ',') }}</td>                          
 
                                 </tr>
                             @endforeach

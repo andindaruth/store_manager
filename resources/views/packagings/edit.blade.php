@@ -38,6 +38,14 @@
                         @enderror
                     </div> 
                     <div class="form-group">
+                        <label for="purpose">Purpose *</label>
+                        <input type="text" class="form-control" id="purpose" name="purpose" value="{{ old('purpose') }}"
+                            placeholder="Enter purpose" >
+                        @error('purpose')
+                            <div class="text-sm text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label for="category">Category *</label>
                         <select class="form-control select2" id="category" name="category" required>
                             <option value="">--Select category</option>                            
@@ -57,7 +65,7 @@
                         @enderror
                     </div>                     
                     
-                    <div class="form-group">
+                   <div class="form-group">
                         <label for="rate">Rate *</label>
                         <input type="text" class="form-control" id="rate" name="rate" value="{{ $packaging->rate }}"
                              required>

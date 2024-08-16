@@ -26,7 +26,7 @@
                             <th>Date</th>
                             <th>Name</th>
                             <th>Category</th>
-                            <th>Person</th>
+                            <th>Taken By</th>
                             <th>Receipt No.</th>
                             <th>Destination</th>
                             <th>Issued By</th>

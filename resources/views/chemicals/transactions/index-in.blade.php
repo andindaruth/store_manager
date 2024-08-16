@@ -30,7 +30,7 @@
                             <th>Delivery Note No.</th>
                             <th>Internal delivery No.</th>
                             <th>Received By</th>
-                            <th>No. Of Packs</th>
+                            <th>Packs</th>
                             <th>Quantity</th>
                             
                             <th class="text-nowrap">Action/ Comment</th>

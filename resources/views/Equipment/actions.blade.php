@@ -30,16 +30,16 @@
                     </thead>
                     <tbody>
                         @unless ($equipment->isEmpty())
-                            @foreach ($equipment as $item)                          
+                            @foreach ($equipment as $equipment)                          
                                 <tr class="text-nowrap">
                                     <td>
-                                        <img src="{{ Storage::url($item->image) }}" alt="{{ $item->name }}" class="img-fluid" style="max-width: 60px; height: 75px;">                                 </td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->quantity_in_stock }}</td>
+                                        <img src="{{ Storage::url($equipment->image) }}" alt="{{ $equipment->name }}" class="img-fluid" style="max-width: 60px; height: 75px;">                                 </td>
+                                    <td>{{ $equipment->name }}</td>
+                                    <td>{{ $equipment->quantity_in_stock }}</td>
                                     <td><a href="{{ route('equipment.actions.give') }}">Give out</a></td>
-                                    <td><a href="{{ route('equipment.actions.add') }}">Add quantity</a></td>
+                                    <td><a href="{{ route('equipment.add', ['id' => $equipment->id]) }}">Add quantity</a></td>
                                     <td><a href="{{ route('equipment.actions.recommend_for_repair') }}">Recommend for repair</a></td>
-                                    <td><a href="{{ route('equipment.actions.dispose') }}">Dispose</a></td>               
+                                    <td><a href="{{ route('equipment.dispose', ['id' => $equipment->id]) }}">Dispose</a></td>               
                                 </tr>
                             @endforeach
                         @else

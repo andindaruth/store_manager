@@ -216,11 +216,16 @@ Route::middleware(['auth'])->group(function () {
 
 //EquipmentAction
 Route::middleware(['auth'])->group(function () {
+    // Add this in your web.php
+  Route::get('/equipment/{id}/add', [EquipmentActionController::class, 'showAddForm'])->name('equipment.add');
+  Route::post('/equipment/{id}/add', [EquipmentActionController::class, 'addQuantity'])->name('equipment.addQuantity');
+  Route::get('/equipment/{id}/dispose', [EquipmentActionController::class, 'showDisposeForm'])->name('equipment.dispose');
+Route::post('/equipment/{id}/dispose', [EquipmentActionController::class, 'disposeEquipment'])->name('equipment.dispose.store');
   Route::get('/equipment/returned', [EquipmentActionController::class, 'returned'])->name('equipment.actions.returned');
   Route::get('/equipment/taken_non_returnable', [EquipmentActionController::class, 'taken_non_returnable'])->name('equipment.actions.taken_non_returnable');
   Route::get('/equipment/repaired', [EquipmentActionController::class, 'repaired'])->name('equipment.actions.repaired');
   Route::get('/equipment/disposed', [EquipmentActionController::class, 'disposed'])->name('equipment.actions.disposed');
-  Route::get('/equipment/general', [EquipmentActionController::class, 'general'])->name('equipment.actions.general');
+  Route::get('/equipment/report_out', [EquipmentActionController::class, 'report_out'])->name('equipment.actions.report_out');
   Route::get('/equipment/pending_return', [EquipmentActionController::class, 'pending_return'])->name('equipment.actions.pending_return');
   Route::get('/equipment/pending_repair', [EquipmentActionController::class, 'pending_repair'])->name('equipment.actions.pending_repair');
   Route::get('/equipment/actions_performed', [EquipmentActionController::class, 'actions_performed'])->name('equipment.actions.actions_performed');
@@ -228,10 +233,8 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/equipment/repair', [EquipmentActionController::class, 'repair'])->name('equipment.actions.repair');
   Route::get('/equipment/reverse', [EquipmentActionController::class, 'reverse'])->name('equipment.actions.reverse');
   Route::get('/equipment/give', [EquipmentActionController::class, 'give'])->name('equipment.actions.give');
-  Route::get('/equipment/add', [EquipmentActionController::class, 'add'])->name('equipment.actions.add');
   Route::get('/equipment/recommend_for_repair', [EquipmentActionController::class, 'recommend_for_repair'])->name('equipment.actions.recommend_for_repair');
-  Route::get('/equipment/dispose', [EquipmentActionController::class, 'dispose'])->name('equipment.actions.dispose');
-  Route::get('/equipment/general_in', [EquipmentActionController::class, 'general_in'])->name('equipment.actions.general_in');
+  Route::get('/equipment/report_in', [EquipmentActionController::class, 'report_in'])->name('equipment.actions.report_in');
 
 });
 

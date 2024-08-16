@@ -1,7 +1,7 @@
 @extends('layouts.app6')
 
-@section('title', 'General Report ')
-@section('page_title', 'General Report Out')
+@section('title', 'General Report Out')
+@section('page_title', 'Report of Equipment Out')
 
 @section('bread_crumb')
     <ol class="breadcrumb float-sm-right">

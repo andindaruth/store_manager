@@ -13,7 +13,7 @@
 @section('main_content')
 
     <div class="col-sm-12">
-    <form method="post" action="{{ route('equipment.update', $equipment->id) }}">
+    <form method="post" action="{{ route('equipment.update', ['equipment' => $equipment]) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="card card-outline card-success">
@@ -67,12 +67,19 @@
                         @error('quantity_in_stock')
                             <div class="text-sm text-danger">{{ $message }}</div>
                         @enderror
+                        <div class="form-group">
+                            <label for="re_order_value">Re-order value *</label>
+                            <input type="number" class="form-control" id="re_order_value" name="re_order_value" value="{{ $equipment->re_order_value }}" required>
+                            @error('re_order_value')
+                                <div class="text-sm text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>    
 
                         <div class="form-group">
         <label for="image">Image *</label>
                         <input type="file" name="image" id="imageInput" accept="image/*" class="form-control">
                                                     <div class="image-preview" id="imagePreview">
-                                                        <p>No image selected</p>
+                                                        
                         @error('image')
                             <div class="text-sm text-danger">{{ $message }}</div>
                         @enderror

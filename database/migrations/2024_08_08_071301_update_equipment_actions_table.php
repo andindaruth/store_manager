@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('reversed_by')->nullable();
             $table->foreign('reversed_by')->references('id')->on('equipment_actions')->onDelete('set null');
             $table->unsignedBigInteger('reverses')->nullable();
-            $table->foreign('reverses')->references('id')->on('quipment_actions')->onDelete('set null');
+            $table->foreign('reverses')->references('id')->on('equipment_actions')->onDelete('set null');
         });
     }
 

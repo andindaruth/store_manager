@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use DB;
 use App\Models\People;
 use App\Models\Equipment;
-use App\Models\EquipmentAction;
 use Illuminate\Http\Request;
+use App\Models\EquipmentAction;
 use Illuminate\Support\Facades\Auth;
 
 class EquipmentController extends Controller
@@ -34,8 +35,8 @@ class EquipmentController extends Controller
             'category1' => 'required|string',
             'category2' => 'required|string',
             'category3' => 'required|string',
-            'quantity_in_stock' => 'required|integer|min:0',
-            're_order_value' => 'required|integer|min:0',
+            'quantity_in_stock' => 'required|numeric|min:0',
+            're_order_value' => 'required|numeric|min:0',
             'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
     
@@ -61,6 +62,7 @@ class EquipmentController extends Controller
 //update the equipment
 public function update(Request $request, Equipment $equipment)
 {
+   
     // Validate the input data
     $validatedData = $request->validate([
         'name' => 'required|string|max:255',
@@ -68,8 +70,8 @@ public function update(Request $request, Equipment $equipment)
         'category1' => 'required|string',
         'category2' => 'required|string',
         'category3' => 'required|string',
-        'quantity_in_stock' => 'required|integer|min:0',
-        're_order_value' => 'required|integer|min:0',
+        'quantity_in_stock' => 'required|numeric|min:0',
+        're_order_value' => 'required|numeric|min:0',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Nullable allows the form to work even if no new image is uploaded
     ]);
 
@@ -81,9 +83,9 @@ public function update(Request $request, Equipment $equipment)
         unset($validatedData['image']); // If no new image is uploaded, don't override the existing one
     }
 
-    // Update the equipment with the validated data
-    $equipment->update($validatedData);
-
+    
+   $equipment->update($validatedData);
+ 
     return redirect()->route('equipment.actions')->with('success', 'Equipment updated successfully.');
 }
 

@@ -30,22 +30,22 @@
                     </thead>
                     <tbody>
                         @unless ($equipment->isEmpty())
-                            @foreach ($equipment as $item)
-                                @if ($item->category1 === 'item') <!-- Filtering by category1 -->
+                            @foreach ($equipment as $equipment)
+                                @if ($equipment->category1 === 'item') <!-- Filtering by category1 -->
                                     <tr class="text-nowrap">
                                         <td>
-                                            <img src="{{ Storage::url($item->image) }}" alt="{{ $item->name }}" class="img-fluid" style="max-width: 60px; height: 75px;">
+                                            <img src="{{ Storage::url($equipment->image) }}" alt="{{ $equipment->name }}" class="img-fluid" style="max-width: 60px; height: 75px;">
                                         </td>
                                         <td>
-                                            <a href="{{ route('equipment.edit', $item->id) }}">{{ $item->name }}</a>
+                                            <a href="{{ route('equipment.edit', $equipment->id) }}">{{ $equipment->name }}</a>
                                         </td>
-                                        <td>{{ $item->description }}</td>
-                                        <td>{{ $item->re_order_value }}</td>
-                                        <td>{{ $item->quantity_in_stock }}</td>
+                                        <td>{{ $equipment->description }}</td>
+                                        <td>{{ $equipment->re_order_value }}</td>
+                                        <td>{{ $equipment->quantity_in_stock }}</td>
                                         <td>
-                                            @if($item->quantity_in_stock > $item->re_order_value + 10)
+                                            @if($equipment->quantity_in_stock > $equipment->re_order_value + 10)
                                                 <span style="color: green;">Stock OK</span>
-                                            @elseif($item->quantity_in_stock >= $item->re_order_value && $item->quantity_in_stock <= $item->re_order_value + 10)
+                                            @elseif($equipment->quantity_in_stock >= $equipment->re_order_value && $equipment->quantity_in_stock <= $equipment->re_order_value + 10)
                                                 <span style="color: Orange;">Need to Re-stock soon</span>
                                             @else
                                                 <span style="color: red;">Re-Stock now</span>

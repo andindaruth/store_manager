@@ -36,7 +36,7 @@ class EquipmentController extends Controller
             'category3' => 'required|string',
             'quantity_in_stock' => 'required|integer|min:0',
             're_order_value' => 'required|integer|min:0',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
     
         // Handle image upload
@@ -53,31 +53,39 @@ class EquipmentController extends Controller
     }
 
     //Edit an Equipment
-    public function edit(Equipement $equipment)
+    public function edit(Equipment $equipment)
     {
         $user = Auth::user();
         return view('equipment.edit', compact('user', 'equipment'));
     }
 //update the equipment
-    public function update(Request $request, Equipment $equipment)
-    {
-        // Validate the input data
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'nullable|string|max:255',
-            'category1' => 'required|string',
-            'category2' => 'required|string',
-            'category3' => 'required|string',
-            'quantity_in_stock' => 'required|integer|min:0',
-            're_order_value' => 'required|integer|min:0',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
+public function update(Request $request, Equipment $equipment)
+{
+    // Validate the input data
+    $validatedData = $request->validate([
+        'name' => 'required|string|max:255',
+        'description' => 'nullable|string|max:255',
+        'category1' => 'required|string',
+        'category2' => 'required|string',
+        'category3' => 'required|string',
+        'quantity_in_stock' => 'required|integer|min:0',
+        're_order_value' => 'required|integer|min:0',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Nullable allows the form to work even if no new image is uploaded
+    ]);
 
-        // Update the equipment with the validated data
-        $equipment->update($validatedData);
+    // Handle image upload
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('equipment_images', 'public');
+        $validatedData['image'] = $imagePath;
+    } else {
+        unset($validatedData['image']); // If no new image is uploaded, don't override the existing one
+    }
 
-        return redirect()->route('equipment.actions')->with('success', 'equipment Updated successfully.');
-        }
+    // Update the equipment with the validated data
+    $equipment->update($validatedData);
+
+    return redirect()->route('equipment.actions')->with('success', 'Equipment updated successfully.');
+}
 
     // Display all equipment
     public function item()

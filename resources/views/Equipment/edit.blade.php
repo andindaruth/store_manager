@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app6')
 
 @section('title', 'Edit Equipment | NASECO')
 @section('page_title', 'Edit Equipment')
@@ -13,7 +13,7 @@
 @section('main_content')
 
     <div class="col-sm-12">
-        <form method="post" action="{{ route('equipment.update', ['equipment' => $equipment]) }}">
+    <form method="post" action="{{ route('equipment.update', $equipment->id) }}">
             @csrf
             @method('PUT')
             <div class="card card-outline card-success">
@@ -46,7 +46,7 @@
                     </div> 
                     <div class="form-group">
                         <label for="category2">Category 2 </label>
-                        <input type="text" class="form-control" id="category2" name="category2" value="{{ $equipment->category1 }}"
+                        <input type="text" class="form-control" id="category2" name="category2" value="{{ $equipment->category2 }}"
                             placeholder="Enter category 2" >
                         @error('category2')
                             <div class="text-sm text-danger">{{ $message }}</div>
@@ -54,7 +54,7 @@
                     </div> 
                     <div class="form-group">
                         <label for="category3">Category 3 </label>
-                        <input type="text" class="form-control" id="category3" name="category3" value="{{ $equipment->category1 }}"
+                        <input type="text" class="form-control" id="category3" name="category3" value="{{ $equipment->category3 }}"
                             placeholder="Enter category 3" >
                         @error('category3')
                             <div class="text-sm text-danger">{{ $message }}</div>
@@ -67,9 +67,10 @@
                         @error('quantity_in_stock')
                             <div class="text-sm text-danger">{{ $message }}</div>
                         @enderror
-                    <div class="form-group">
-                        <label for="image">Image *</label>
-                        <input type="file" name="image" id="imageInput" accept="image/*" class="form-control" value="{{ $equipment->image }}">
+
+                        <div class="form-group">
+        <label for="image">Image *</label>
+                        <input type="file" name="image" id="imageInput" accept="image/*" class="form-control">
                                                     <div class="image-preview" id="imagePreview">
                                                         <p>No image selected</p>
                         @error('image')
@@ -77,26 +78,27 @@
                         @enderror
                     </div>   
                     <script>
-                                document.getElementById('imageInput').addEventListener('change', function(event) {
-                                    const file = event.target.files[0];
-                                    if (file) {
-                                        const reader = new FileReader();
-                                        reader.onload = function(e) {
-                                            const imagePreview = document.getElementById('imagePreview');
-                                            imagePreview.innerHTML = `<img src="${e.target.result}" alt="Selected Image" class="img-fluid">`;
-                                        }
-                                        reader.readAsDataURL(file);
-                                    } else {
-                                        document.getElementById('imagePreview').innerHTML = '<p>No image selected</p>';
-                                    }
-                                });
-                            </script>           
+    document.getElementById('imageInput').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imagePreview = document.getElementById('imagePreview');
+                imagePreview.innerHTML = `<img src="${e.target.result}" alt="Selected Image" class="img-fluid" style="width: 175px; height: 200px;">`;
+            }
+            reader.readAsDataURL(file);
+        } else {
+            document.getElementById('imagePreview').innerHTML = '<p>No image selected</p>';
+        }
+        
+    });
+</script>
                                                
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
                     <div class="card-tools text-right">
-                        <button name="submit" type="submit" class="btn btn-success">update Fertiliser</button>
+                        <button name="submit" type="submit" class="btn btn-success">update</button>
                     </div>
                 </div>
             </div>

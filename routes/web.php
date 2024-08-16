@@ -8,15 +8,15 @@ use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChemicalController;
-use App\Http\Controllers\ChemicalTransquipmentController;
-use App\Http\Controllers\LubTransquipmentController;
-use App\Http\Controllers\FuelTransquipmentController;
+use App\Http\Controllers\ChemicalTransactionController;
+use App\Http\Controllers\LubTransactionController;
+use App\Http\Controllers\FuelTransactionController;
 use App\Http\Controllers\FertiliserController;
-use App\Http\Controllers\FertiliserTransquipmentController;
+use App\Http\Controllers\FertiliserTransactionController;
 use App\Http\Controllers\PackagingController;
-use App\Http\Controllers\PackagingTransquipmentController;
-use App\Http\Controllers\EquipmentController;
-use App\Http\Controllers\EquipmentActionController;
+use App\Http\Controllers\PackagingTransactionController;
+use App\Http\Controllers\sactionController;
+use App\Http\Controllers\sactionActionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,17 +92,17 @@ Route::middleware(['auth'])->group(function () {
 
 //fuel
 Route::middleware(['auth'])->group(function () {
-    Route::get('/fuel-in', [FuelTransquipmentController::class, 'index_fuel_in'])->name('fuel-in.index');
-    Route::get('/fuel-in-report', [FuelTransquipmentController::class, 'report_fuel_in'])->name('fuel-in.report');
-    Route::get('/fuel-in/create', [FuelTransquipmentController::class, 'create_fuel_in'])->name('fuel-in.create');
-    Route::post('/fuel-in', [FuelTransquipmentController::class, 'store_fuel_in'])->name('fuel-in.store');
-    Route::post('/reverse-fuel-in', [FuelTransquipmentController::class, 'reverse_fuel_in'])->name('fuel-in.reverse');
-    Route::get('/fuel-out', [FuelTransquipmentController::class, 'index_fuel_out'])->name('fuel-out.index');
-    Route::get('/fuel-out-report', [FuelTransquipmentController::class, 'report_fuel_out'])->name('fuel-out.report');
-    Route::get('/fuel-out-report-sum', [FuelTransquipmentController::class, 'report_fuel_out_sum'])->name('fuel-out.report-sum');
-    Route::get('/fuel-out/create', [FuelTransquipmentController::class, 'create_fuel_out'])->name('fuel-out.create');
-    Route::post('/fuel-out', [FuelTransquipmentController::class, 'store_fuel_out'])->name('fuel-out.store');
-    Route::post('/reverse-fuel-out', [FuelTransquipmentController::class, 'reverse_fuel_out'])->name('fuel-out.reverse');
+    Route::get('/fuel-in', [FuelTransactionController::class, 'index_fuel_in'])->name('fuel-in.index');
+    Route::get('/fuel-in-report', [FuelTransactionController::class, 'report_fuel_in'])->name('fuel-in.report');
+    Route::get('/fuel-in/create', [FuelTransactionController::class, 'create_fuel_in'])->name('fuel-in.create');
+    Route::post('/fuel-in', [FuelTransactionController::class, 'store_fuel_in'])->name('fuel-in.store');
+    Route::post('/reverse-fuel-in', [FuelTransactionController::class, 'reverse_fuel_in'])->name('fuel-in.reverse');
+    Route::get('/fuel-out', [FuelTransactionController::class, 'index_fuel_out'])->name('fuel-out.index');
+    Route::get('/fuel-out-report', [FuelTransactionController::class, 'report_fuel_out'])->name('fuel-out.report');
+    Route::get('/fuel-out-report-sum', [FuelTransactionController::class, 'report_fuel_out_sum'])->name('fuel-out.report-sum');
+    Route::get('/fuel-out/create', [FuelTransactionController::class, 'create_fuel_out'])->name('fuel-out.create');
+    Route::post('/fuel-out', [FuelTransactionController::class, 'store_fuel_out'])->name('fuel-out.store');
+    Route::post('/reverse-fuel-out', [FuelTransactionController::class, 'reverse_fuel_out'])->name('fuel-out.reverse');
    
 });
 
@@ -117,16 +117,16 @@ Route::middleware(['auth'])->group(function () {
 
 //lub Transaction
 Route::middleware(['auth'])->group(function () {
-    Route::get('/lub-in', [LubTransquipmentController::class, 'index_lub_in'])->name('lub-in.index');
-    Route::get('/lub-in-report', [LubTransquipmentController::class, 'report_lub_in'])->name('lub-in.report');
-    Route::get('/lub-in/create', [LubTransquipmentController::class, 'create_lub_in'])->name('lub-in.create');
-    Route::post('/lub-in', [LubTransquipmentController::class, 'store_lub_in'])->name('lub-in.store');
-    Route::post('/reverse-lub-in', [LubTransquipmentController::class, 'reverse_lub_in'])->name('lub-in.reverse');
-    Route::get('/lub-out', [LubTransquipmentController::class, 'index_lub_out'])->name('lub-out.index');
-    Route::get('/lub-out-report', [LubTransquipmentController::class, 'report_lub_out'])->name('lub-out.report');
-    Route::get('/lub-out/create', [LubTransquipmentController::class, 'create_lub_out'])->name('lub-out.create');
-    Route::post('/lub-out', [LubTransquipmentController::class, 'store_lub_out'])->name('lub-out.store');
-    Route::post('/reverse-lub-out', [LubTransquipmentController::class, 'reverse_lub_out'])->name('lub-out.reverse');   
+    Route::get('/lub-in', [LubTransactionController::class, 'index_lub_in'])->name('lub-in.index');
+    Route::get('/lub-in-report', [LubTransactionController::class, 'report_lub_in'])->name('lub-in.report');
+    Route::get('/lub-in/create', [LubTransactionController::class, 'create_lub_in'])->name('lub-in.create');
+    Route::post('/lub-in', [LubTransactionController::class, 'store_lub_in'])->name('lub-in.store');
+    Route::post('/reverse-lub-in', [LubTransactionController::class, 'reverse_lub_in'])->name('lub-in.reverse');
+    Route::get('/lub-out', [LubTransactionController::class, 'index_lub_out'])->name('lub-out.index');
+    Route::get('/lub-out-report', [LubTransactionController::class, 'report_lub_out'])->name('lub-out.report');
+    Route::get('/lub-out/create', [LubTransactionController::class, 'create_lub_out'])->name('lub-out.create');
+    Route::post('/lub-out', [LubTransactionController::class, 'store_lub_out'])->name('lub-out.store');
+    Route::post('/reverse-lub-out', [LubTransactionController::class, 'reverse_lub_out'])->name('lub-out.reverse');   
 });
 
 //Chemical
@@ -140,16 +140,16 @@ Route::middleware(['auth'])->group(function () {
 
 //Chemical Transaction
 Route::middleware(['auth'])->group(function () {
-    Route::get('/chemical-in', [ChemicalTransquipmentController::class, 'index_chemical_in'])->name('chemical-in.index');
-    Route::get('/chemical-in-report', [ChemicalTransquipmentController::class, 'report_chemical_in'])->name('chemical-in.report');
-    Route::get('/chemical-in/create', [ChemicalTransquipmentController::class, 'create_chemical_in'])->name('chemical-in.create');
-    Route::post('/chemical-in', [ChemicalTransquipmentController::class, 'store_chemical_in'])->name('chemical-in.store');
-    Route::post('/reverse-chemical-in', [ChemicalTransquipmentController::class, 'reverse_chemical_in'])->name('chemical-in.reverse');
-    Route::get('/chemical-out', [ChemicalTransquipmentController::class, 'index_chemical_out'])->name('chemical-out.index');
-    Route::get('/chemical-out-report', [ChemicalTransquipmentController::class, 'report_chemical_out'])->name('chemical-out.report');
-    Route::get('/chemical-out/create', [ChemicalTransquipmentController::class, 'create_chemical_out'])->name('chemical-out.create');
-    Route::post('/chemical-out', [ChemicalTransquipmentController::class, 'store_chemical_out'])->name('chemical-out.store');  
-    Route::post('/reverse-chemical-out', [ChemicalTransquipmentController::class, 'reverse_chemical_out'])->name('chemical-out.reverse');
+    Route::get('/chemical-in', [ChemicalTransactionController::class, 'index_chemical_in'])->name('chemical-in.index');
+    Route::get('/chemical-in-report', [ChemicalTransactionController::class, 'report_chemical_in'])->name('chemical-in.report');
+    Route::get('/chemical-in/create', [ChemicalTransactionController::class, 'create_chemical_in'])->name('chemical-in.create');
+    Route::post('/chemical-in', [ChemicalTransactionController::class, 'store_chemical_in'])->name('chemical-in.store');
+    Route::post('/reverse-chemical-in', [ChemicalTransactionController::class, 'reverse_chemical_in'])->name('chemical-in.reverse');
+    Route::get('/chemical-out', [ChemicalTransactionController::class, 'index_chemical_out'])->name('chemical-out.index');
+    Route::get('/chemical-out-report', [ChemicalTransactionController::class, 'report_chemical_out'])->name('chemical-out.report');
+    Route::get('/chemical-out/create', [ChemicalTransactionController::class, 'create_chemical_out'])->name('chemical-out.create');
+    Route::post('/chemical-out', [ChemicalTransactionController::class, 'store_chemical_out'])->name('chemical-out.store');  
+    Route::post('/reverse-chemical-out', [ChemicalTransactionController::class, 'reverse_chemical_out'])->name('chemical-out.reverse');
  
 });
 
@@ -164,16 +164,16 @@ Route::middleware(['auth'])->group(function () {
 
 //Feriliser Transaction
 Route::middleware(['auth'])->group(function () {
-    Route::get('/fertiliser-in', [FertiliserTransquipmentController::class, 'index_fertiliser_in'])->name('fertiliser-in.index');
-    Route::get('/fertiliser-in-report', [FertiliserTransquipmentController::class, 'report_fertiliser_in'])->name('fertiliser-in.report');
-    Route::get('/fertiliser-in/create', [FertiliserTransquipmentController::class, 'create_fertiliser_in'])->name('fertiliser-in.create');
-    Route::post('/fertiliser-in', [FertiliserTransquipmentController::class, 'store_fertiliser_in'])->name('fertiliser-in.store');
-    Route::post('/reverse-fertiliser-in', [FertiliserTransquipmentController::class, 'reverse_fertiliser_in'])->name('fertiliser-in.reverse');
-    Route::get('/fertiliser-out', [FertiliserTransquipmentController::class, 'index_fertiliser_out'])->name('fertiliser-out.index');
-    Route::get('/fertiliser-out-report', [FertiliserTransquipmentController::class, 'report_fertiliser_out'])->name('fertiliser-out.report');
-    Route::get('/fertiliser-out/create', [FertiliserTransquipmentController::class, 'create_fertiliser_out'])->name('fertiliser-out.create');
-    Route::post('/fertiliser-out', [FertiliserTransquipmentController::class, 'store_fertiliser_out'])->name('fertiliser-out.store');   
-    Route::post('/reverse-fertiliser-out', [FertiliserTransquipmentController::class, 'reverse_fertiliser_out'])->name('fertiliser-out.reverse');
+    Route::get('/fertiliser-in', [FertiliserTransactionController::class, 'index_fertiliser_in'])->name('fertiliser-in.index');
+    Route::get('/fertiliser-in-report', [FertiliserTransactionController::class, 'report_fertiliser_in'])->name('fertiliser-in.report');
+    Route::get('/fertiliser-in/create', [FertiliserTransactionController::class, 'create_fertiliser_in'])->name('fertiliser-in.create');
+    Route::post('/fertiliser-in', [FertiliserTransactionController::class, 'store_fertiliser_in'])->name('fertiliser-in.store');
+    Route::post('/reverse-fertiliser-in', [FertiliserTransactionController::class, 'reverse_fertiliser_in'])->name('fertiliser-in.reverse');
+    Route::get('/fertiliser-out', [FertiliserTransactionController::class, 'index_fertiliser_out'])->name('fertiliser-out.index');
+    Route::get('/fertiliser-out-report', [FertiliserTransactionController::class, 'report_fertiliser_out'])->name('fertiliser-out.report');
+    Route::get('/fertiliser-out/create', [FertiliserTransactionController::class, 'create_fertiliser_out'])->name('fertiliser-out.create');
+    Route::post('/fertiliser-out', [FertiliserTransactionController::class, 'store_fertiliser_out'])->name('fertiliser-out.store');   
+    Route::post('/reverse-fertiliser-out', [FertiliserTransactionController::class, 'reverse_fertiliser_out'])->name('fertiliser-out.reverse');
 
 });
 
@@ -188,50 +188,50 @@ Route::middleware(['auth'])->group(function () {
 
 //Packaging Transaction
 Route::middleware(['auth'])->group(function () {
-    Route::get('/packaging-in', [PackagingTransquipmentController::class, 'index_packaging_in'])->name('packaging-in.index');
-    Route::get('/packaging-in-report', [PackagingTransquipmentController::class, 'report_packaging_in'])->name('packaging-in.report');
-    Route::get('/packaging-in/create', [PackagingTransquipmentController::class, 'create_packaging_in'])->name('packaging-in.create');
-    Route::post('/packaging-in', [PackagingTransquipmentController::class, 'store_packaging_in'])->name('packaging-in.store');
-    Route::post('/reverse-packaging-in', [PackagingTransquipmentController::class, 'reverse_packaging_in'])->name('packaging-in.reverse');
-    Route::get('/packaging-out', [PackagingTransquipmentController::class, 'index_packaging_out'])->name('packaging-out.index');
-    Route::get('/packaging-out-report', [PackagingTransquipmentController::class, 'report_packaging_out'])->name('packaging-out.report');
-    Route::get('/packaging-out/create', [PackagingTransquipmentController::class, 'create_packaging_out'])->name('packaging-out.create');
-    Route::post('/packaging-out', [PackagingTransquipmentController::class, 'store_packaging_out'])->name('packaging-out.store');  
-    Route::post('/reverse-packaging-out', [PackagingTransquipmentController::class, 'reverse_packaging_out'])->name('packaging-out.reverse');
+    Route::get('/packaging-in', [PackagingTransactionController::class, 'index_packaging_in'])->name('packaging-in.index');
+    Route::get('/packaging-in-report', [PackagingTransactionController::class, 'report_packaging_in'])->name('packaging-in.report');
+    Route::get('/packaging-in/create', [PackagingTransactionController::class, 'create_packaging_in'])->name('packaging-in.create');
+    Route::post('/packaging-in', [PackagingTransactionController::class, 'store_packaging_in'])->name('packaging-in.store');
+    Route::post('/reverse-packaging-in', [PackagingTransactionController::class, 'reverse_packaging_in'])->name('packaging-in.reverse');
+    Route::get('/packaging-out', [PackagingTransactionController::class, 'index_packaging_out'])->name('packaging-out.index');
+    Route::get('/packaging-out-report', [PackagingTransactionController::class, 'report_packaging_out'])->name('packaging-out.report');
+    Route::get('/packaging-out/create', [PackagingTransactionController::class, 'create_packaging_out'])->name('packaging-out.create');
+    Route::post('/packaging-out', [PackagingTransactionController::class, 'store_packaging_out'])->name('packaging-out.store');  
+    Route::post('/reverse-packaging-out', [PackagingTransactionController::class, 'reverse_packaging_out'])->name('packaging-out.reverse');
 });
 
-//Equipment
+//saction
 Route::middleware(['auth'])->group(function () {
-  Route::get('/equipment/actions', [EquipmentController::class, 'index'])->name('equipment.actions');
-  Route::get('/equipment/create', [EquipmentController::class, 'create'])->name('equipment.create');
-  Route::post('/equipment', [EquipmentController::class, 'store'])->name('equipment.store');
-  Route::get('/equipment/{equipment}/edit', [EquipmentController::class, 'edit'])->name('equipment.edit');
-  Route::put('/equipment/{id}', [EquipmentController::class, 'update'])->name('equipment.update');
-  Route::get('/equipment/items', [EquipmentController::class, 'item'])->name('equipment.items');
-  Route::get('/equipment/tools', [EquipmentController::class, 'tool'])->name('equipment.tools');
-  Route::get('/equipment/spare_parts', [EquipmentController::class, 'spare_part'])->name('equipment.spare_parts');
-  Route::get('/equipment/farm', [EquipmentController::class, 'farm'])->name('equipment.farm');
-  Route::get('/equipment/workshop', [EquipmentController::class, 'workshop'])->name('equipment.workshop');
+  Route::get('/saction/actions', [sactionController::class, 'index'])->name('saction.actions');
+  Route::get('/saction/create', [sactionController::class, 'create'])->name('saction.create');
+  Route::post('/saction', [sactionController::class, 'store'])->name('saction.store');
+  Route::get('/saction/{saction}/edit', [sactionController::class, 'edit'])->name('saction.edit');
+  Route::put('/saction/{id}', [sactionController::class, 'update'])->name('saction.update');
+  Route::get('/saction/items', [sactionController::class, 'item'])->name('saction.items');
+  Route::get('/saction/tools', [sactionController::class, 'tool'])->name('saction.tools');
+  Route::get('/saction/spare_parts', [sactionController::class, 'spare_part'])->name('saction.spare_parts');
+  Route::get('/saction/farm', [sactionController::class, 'farm'])->name('saction.farm');
+  Route::get('/saction/workshop', [sactionController::class, 'workshop'])->name('saction.workshop');
 });
 
-//EquipmentAction
+//sactionAction
 Route::middleware(['auth'])->group(function () {
-  Route::get('/equipment/returned', [EquipmentActionController::class, 'returned'])->name('equipment.actions.returned');
-  Route::get('/equipment/taken_non_returnable', [EquipmentActionController::class, 'taken_non_returnable'])->name('equipment.actions.taken_non_returnable');
-  Route::get('/equipment/repaired', [EquipmentActionController::class, 'repaired'])->name('equipment.actions.repaired');
-  Route::get('/equipment/disposed', [EquipmentActionController::class, 'disposed'])->name('equipment.actions.disposed');
-  Route::get('/equipment/general', [EquipmentActionController::class, 'general'])->name('equipment.actions.general');
-  Route::get('/equipment/pending_return', [EquipmentActionController::class, 'pending_return'])->name('equipment.actions.pending_return');
-  Route::get('/equipment/pending_repair', [EquipmentActionController::class, 'pending_repair'])->name('equipment.actions.pending_repair');
-  Route::get('/equipment/actions_performed', [EquipmentActionController::class, 'actions_performed'])->name('equipment.actions.actions_performed');
-  Route::get('/equipment/return', [EquipmentActionController::class, 'return'])->name('equipment.actions.return');
-  Route::get('/equipment/repair', [EquipmentActionController::class, 'repair'])->name('equipment.actions.repair');
-  Route::get('/equipment/reverse', [EquipmentActionController::class, 'reverse'])->name('equipment.actions.reverse');
-  Route::get('/equipment/give', [EquipmentActionController::class, 'give'])->name('equipment.actions.give');
-  Route::get('/equipment/add', [EquipmentActionController::class, 'add'])->name('equipment.actions.add');
-  Route::get('/equipment/recommend_for_repair', [EquipmentActionController::class, 'recommend_for_repair'])->name('equipment.actions.recommend_for_repair');
-  Route::get('/equipment/dispose', [EquipmentActionController::class, 'dispose'])->name('equipment.actions.dispose');
-  Route::get('/equipment/general_in', [EquipmentActionController::class, 'general_in'])->name('equipment.actions.general_in');
+  Route::get('/saction/returned', [sactionActionController::class, 'returned'])->name('saction.actions.returned');
+  Route::get('/saction/taken_non_returnable', [sactionActionController::class, 'taken_non_returnable'])->name('saction.actions.taken_non_returnable');
+  Route::get('/saction/repaired', [sactionActionController::class, 'repaired'])->name('saction.actions.repaired');
+  Route::get('/saction/disposed', [sactionActionController::class, 'disposed'])->name('saction.actions.disposed');
+  Route::get('/saction/general', [sactionActionController::class, 'general'])->name('saction.actions.general');
+  Route::get('/saction/pending_return', [sactionActionController::class, 'pending_return'])->name('saction.actions.pending_return');
+  Route::get('/saction/pending_repair', [sactionActionController::class, 'pending_repair'])->name('saction.actions.pending_repair');
+  Route::get('/saction/actions_performed', [sactionActionController::class, 'actions_performed'])->name('saction.actions.actions_performed');
+  Route::get('/saction/return', [sactionActionController::class, 'return'])->name('saction.actions.return');
+  Route::get('/saction/repair', [sactionActionController::class, 'repair'])->name('saction.actions.repair');
+  Route::get('/saction/reverse', [sactionActionController::class, 'reverse'])->name('saction.actions.reverse');
+  Route::get('/saction/give', [sactionActionController::class, 'give'])->name('saction.actions.give');
+  Route::get('/saction/add', [sactionActionController::class, 'add'])->name('saction.actions.add');
+  Route::get('/saction/recommend_for_repair', [sactionActionController::class, 'recommend_for_repair'])->name('saction.actions.recommend_for_repair');
+  Route::get('/saction/dispose', [sactionActionController::class, 'dispose'])->name('saction.actions.dispose');
+  Route::get('/saction/general_in', [sactionActionController::class, 'general_in'])->name('saction.actions.general_in');
 
 });
 

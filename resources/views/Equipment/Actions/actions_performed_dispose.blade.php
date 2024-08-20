@@ -17,7 +17,7 @@
         <div role="group" class="btn-group">
             <ul class="nav">
                 <li>
-                    <a href="{{ route('equipment.actions.actions_performed') }}" class="btn btn-success">Add Quantity</a>
+                    <a href="{{ route('equipment.actions.actions_performed') }}" class="btn btn-default btn-success">Add Quantity</a>
                 </li>
                 <li>
                     <a href="{{ route('equipment.actions.actions_performed_give') }}" class="btn btn-default btn-success">Give Out</a>
@@ -26,7 +26,7 @@
                     <a href="{{ route('equipment.actions.actions_performed') }}" class="btn btn-default btn-success">Recommend for Repair</a>
                 </li>
                 <li>
-                    <a href="{{ route('equipment.actions.actions_performed_dispose') }}" class="btn btn-default btn-success">Dispose</a>
+                    <a href="{{ route('equipment.actions.actions_performed_dispose') }}" class="btn btn-success">Dispose</a>
                 </li>
 
             </ul>
@@ -35,7 +35,8 @@
 </div>
 
     <div class="col-sm-12">
-        <div class="card card-success card-outline">           
+        <div class="card card-success card-outline">
+           
             <div class="card-body table-responsive">
                 <table id="example3" class="table table-hover table-head-fixed table-sm table-striped">
                     <thead>
@@ -44,7 +45,7 @@
                             <th>Date performed</th>
                             <th>Equipment Affected</th>
                             <th>Performed By</th>
-                            <th>Quantity Added</th>
+                            <th>Quantity Disposed</th>
                             <th>Reverse</th>
                         </tr>
                     </thead>
@@ -72,7 +73,7 @@
                                     <!-- Modal -->
                                 <div class="modal fade" id="modal-lg-{{ $action->id }}">
                                     <div class="modal-dialog modal-lg">
-                                            <form method="post" action="{{ route('add.reverse') }}">
+                                            <form method="post" action="{{ route('dispose.reverse') }}">
                                        
                                         @csrf
                                         <div class="modal-content">

@@ -17,8 +17,22 @@
                 <h3 class="card-title">Dispose Equipment</h3>
             </div>
             <div class="card-body">
-                <form action="{{ route('equipment.dispose.store', $equipment->id) }}" method="POST">
+                <form action="{{ route('equipment.dispose.store') }}" method="POST">
                     @csrf
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <div class="input-group date" id="reservationdate1" data-target-input="nearest">
+                            <div class="input-group-prepend" data-target="#reservationdate1" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+                            <input id="date" name="date" type="text" class="form-control datetimepicker-input"
+                                data-target="#reservationdate1" value="{{ old('date') }}" placeholder="YYYY-MM-DD"
+                                required>
+                        </div>
+                        @error('date')
+                            <div class="text-sm text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
                     <div class="form-group">
                         <label for="name">Equipment Name</label>
                         <input type="text" class="form-control" id="name" name="name" value="{{ $equipment->name }}" readonly>
@@ -38,8 +52,14 @@
                     </div>
                     <div class="form-group">
                         <label for="reason">Reason for disposal</label>
-                        <input type="text" class="form-control" id="reason" name="reason">
+                        <input type="text" class="form-control" id="reason" name="remarks">
                     </div>
+
+                    <input type="text" class="form-control" id="user_id" name="user_id" value="{{ $user->id }}"
+                    hidden>
+                    <input type="text" class="form-control" id="equipment_id" name="equipment_id" value="{{ $equipment->id }}"
+                    hidden>
+                <input type="text" class="form-control" id="type" name="type" value="dispose" hidden>
 
                     <div class="card-footer">
                         <div class="card-tools text-right">

@@ -36,8 +36,8 @@
                                 <tr class="text-nowrap">
                                     <td>{{ $equipment->date }}</td>
                                     <td>{{ $equipment->name }}</td>
-                                    <td>{{ $person->name }}</td>
-                                    <td>{{ $person->name }}</td>
+                                    <td></td>
+                                    <td></td>
                                     <td>{{ $equipment->quantity_taken }}</td>
                                     <td>{{ $equipment->quantity_returned }}</td>
                                     <td>{{ $equipment->quantity_awaiting_return }}</td>

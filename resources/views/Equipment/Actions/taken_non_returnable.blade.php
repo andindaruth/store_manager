@@ -34,7 +34,7 @@
                                 <tr class="text-nowrap">
                                     <td>{{ $equipment->date }}</td>
                                     <td>{{ $equipment->name }}</td>
-                                    <td>{{ $person->name }}</td>
+                                    <td></td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $equipment->quantity_taken }}</td>
                                 </tr>

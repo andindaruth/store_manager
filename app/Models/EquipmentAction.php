@@ -12,10 +12,14 @@ class EquipmentAction extends Model
     protected $fillable = [
         'equipment_id',
         'user_id',
-        'action_type',
+        'person_id',
+        'type',
         'quantity',
         'date',
         'remarks',
+        'is_reversed',
+        'reversal_reason',
+        'reversed_by',
     ];
 
     public function equipment()

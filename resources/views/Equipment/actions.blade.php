@@ -5,9 +5,9 @@
 
 @section('bread_crumb')
     <ol class="breadcrumb float-sm-right">
-        <li><a href="{{ route('equipment.create') }}" class="btn float-right bg-success"><i class="fas fa-plus"></i> Add new</a></li>
-        <li><a href="{{ route('equipment.actions.pending_return') }}" class="btn float-right bg-success"><i class="fas fa-redo"></i> Return</a></li>
-        <li><a href="{{ route('equipment.actions.pending_repair') }}" class="btn float-right bg-success"><i class="fas fa-exclamation-triangle"></i> Repair</a></li>
+        <li><a href="{{ route('equipment.create') }}" class="btn float-right bg-success"><i class="fas fa-plus"></i> Add new</a></li><span>&nbsp;</span>
+        <li><a href="{{ route('equipment.actions.pending_return') }}" class="btn float-right bg-success"><i class="fas fa-redo"></i> Return</a></li><span>&nbsp;</span>
+        <li><a href="{{ route('equipment.actions.pending_repair') }}" class="btn float-right bg-success"><i class="fas fa-exclamation-triangle"></i> Repair</a></li><span>&nbsp;</span>
         <li><a href="{{ route('equipment.actions.actions_performed') }}" class="btn float-right bg-success"><i class="fa fa-undo"></i> Reverse</a></li>
     </ol>
 @endsection
@@ -36,7 +36,7 @@
                                         <img src="{{ Storage::url($equipment->image) }}" alt="{{ $equipment->name }}" class="img-fluid" style="max-width: 60px; height: 75px;">                                 </td>
                                     <td>{{ $equipment->name }}</td>
                                     <td>{{ $equipment->quantity_in_stock }}</td>
-                                    <td><a href="{{ route('equipment.actions.give') }}">Give out</a></td>
+                                    <td><a href="{{ route('equipment.actions.give', ['id' => $equipment->id]) }}">Give out</a></td>
                                     <td><a href="{{ route('equipment.add', ['id' => $equipment->id]) }}">Add quantity</a></td>
                                     <td><a href="{{ route('equipment.actions.recommend_for_repair') }}">Recommend for repair</a></td>
                                     <td><a href="{{ route('equipment.dispose', ['id' => $equipment->id]) }}">Dispose</a></td>               

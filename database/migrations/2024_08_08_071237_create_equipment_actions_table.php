@@ -19,8 +19,9 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('equipment_id')->nullable();
             $table->foreign('equipment_id')->references('id')->on('equipment');
-            $table->string('quantity_affected')->nullable();
+            $table->string('quantity')->nullable();
             $table->string('type')->nullable();
+            $table->string('remarks')->nullable();
             $table->date('date');
             $table->timestamps();
         });

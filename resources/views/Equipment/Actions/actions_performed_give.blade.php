@@ -17,10 +17,10 @@
         <div role="group" class="btn-group">
             <ul class="nav">
                 <li>
-                    <a href="{{ route('equipment.actions.actions_performed') }}" class="btn btn-success">Add Quantity</a>
+                    <a href="{{ route('equipment.actions.actions_performed') }}" class="btn btn-default btn-success">Add Quantity</a>
                 </li>
                 <li>
-                    <a href="{{ route('equipment.actions.actions_performed_give') }}" class="btn btn-default btn-success">Give Out</a>
+                    <a href="{{ route('equipment.actions.actions_performed_give') }}" class="btn btn-success">Give Out</a>
                 </li>
                 <li>
                     <a href="{{ route('equipment.actions.actions_performed') }}" class="btn btn-default btn-success">Recommend for Repair</a>
@@ -35,16 +35,18 @@
 </div>
 
     <div class="col-sm-12">
-        <div class="card card-success card-outline">           
+        <div class="card card-success card-outline">
+           
             <div class="card-body table-responsive">
                 <table id="example3" class="table table-hover table-head-fixed table-sm table-striped">
                     <thead>
                         <tr> 
                             <th>ID</th>                          
-                            <th>Date performed</th>
-                            <th>Equipment Affected</th>
-                            <th>Performed By</th>
-                            <th>Quantity Added</th>
+                            <th>Date </th>
+                            <th>Equipment </th>
+                            <th>Given Out By</th>
+                            <th>Taken By</th>
+                            <th>Quantity Taken</th>
                             <th>Reverse</th>
                         </tr>
                     </thead>
@@ -56,6 +58,7 @@
                                     <td>{{ $action->date }}</td>
                                     <td>{{ $action->equipment->name }}</td>
                                     <td>{{ $action->user->name }}</td>
+                                    <td>{{ $action->person->name }}</td>
                                     <td>{{ $action->quantity }}</td>
                                     <td>
                                         @if ($action->reverses)
@@ -72,7 +75,7 @@
                                     <!-- Modal -->
                                 <div class="modal fade" id="modal-lg-{{ $action->id }}">
                                     <div class="modal-dialog modal-lg">
-                                            <form method="post" action="{{ route('add.reverse') }}">
+                                            <form method="post" action="{{ route('give.reverse') }}">
                                        
                                         @csrf
                                         <div class="modal-content">

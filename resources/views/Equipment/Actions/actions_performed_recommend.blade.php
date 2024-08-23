@@ -23,10 +23,10 @@
                     <a href="{{ route('equipment.actions.actions_performed_give') }}" class="btn btn-default btn-success">Give Out</a>
                 </li>
                 <li>
-                    <a href="{{ route('equipment.actions.actions_performed_recommend') }}" class="btn btn-default btn-success">Recommend for Repair</a>
+                    <a href="{{ route('equipment.actions.actions_performed_recommend') }}" class="btn btn-success">Recommend for Repair</a>
                 </li>
                 <li>
-                    <a href="{{ route('equipment.actions.actions_performed_dispose') }}" class="btn btn-success">Dispose</a>
+                    <a href="{{ route('equipment.actions.actions_performed_dispose') }}" class="btn btn-default btn-success">Dispose</a>
                 </li>
 
             </ul>
@@ -42,10 +42,11 @@
                     <thead>
                         <tr> 
                             <th>ID</th>                          
-                            <th>Date performed</th>
-                            <th>Equipment Affected</th>
-                            <th>Performed By</th>
-                            <th>Quantity Disposed</th>
+                            <th>Date</th>
+                            <th>Equipment</th>
+                            <th>Recommended By</th>
+                            <th>Issues</th>
+                            <th>QTY</th>
                             <th>Reverse</th>
                         </tr>
                     </thead>
@@ -57,6 +58,7 @@
                                     <td>{{ $action->date }}</td>
                                     <td>{{ $action->equipment->name }}</td>
                                     <td>{{ $action->user->name }}</td>
+                                    <td>{{ $action->remarks }}</td>
                                     <td>{{ $action->quantity }}</td>
                                     <td>
                                         @if ($action->reverses)
@@ -73,7 +75,7 @@
                                     <!-- Modal -->
                                 <div class="modal fade" id="modal-lg-{{ $action->id }}">
                                     <div class="modal-dialog modal-lg">
-                                            <form method="post" action="{{ route('dispose.reverse') }}">
+                                            <form method="post" action="{{ route('recommend.reverse') }}">
                                        
                                         @csrf
                                         <div class="modal-content">

@@ -23,7 +23,7 @@
                     <a href="{{ route('equipment.actions.actions_performed_give') }}" class="btn btn-default btn-success">Give Out</a>
                 </li>
                 <li>
-                    <a href="{{ route('equipment.actions.actions_performed') }}" class="btn btn-default btn-success">Recommend for Repair</a>
+                    <a href="{{ route('equipment.actions.actions_performed_recommend') }}" class="btn btn-default btn-success">Recommend for Repair</a>
                 </li>
                 <li>
                     <a href="{{ route('equipment.actions.actions_performed_dispose') }}" class="btn btn-default btn-success">Dispose</a>

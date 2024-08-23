@@ -23,8 +23,57 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        <label for="category1">Category 1</label>
+                                        <select class="form-control select2" id="category1" name="category1">
+                                            <option value="">--Select category</option>                            
+                                            <option value="item">Item</option>
+                                            <option value="tool">Tool</option>
+                                            <option value="spare_part">Spare Part</option>                            
+                                        </select>
+                                        @error('category1')
+                                            <div class="text-sm text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div> 
+                                </div>
+                               
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="category2">Category 2</label>
+                                        <select class="form-control select2" id="category2" name="category2">
+                                            <option value="">--Select category</option>                            
+                                            <option value="farm">Farm</option>
+                                            <option value="workshop">Workshop</option>                           
+                                        </select>
+                                        @error('category2')
+                                            <div class="text-sm text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>   
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="category3">Category 3</label>
+                                        <select class="form-control select2" id="category3" name="category3">
+                                            <option value="">--Select category</option>                            
+                                            <option value="returnable">Returnable</option>
+                                            <option value="non_returnable">Non-Returnable</option>                           
+                                        </select>
+                                        @error('category3')
+                                            <div class="text-sm text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
                                         <label>Filter by Equipment</label>
-                                        <div class="input-group ">
+                                        <div class="input-group">
                                             <select class="form-control select2" id="equipment_id" name="equipment_id">
                                                 <option value="">--All equipments</option>
                                                 @foreach ($equipments as $equipment)
@@ -67,7 +116,7 @@
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <label>:</label>
-                                        <input type="submit" class="btn bg-success form-control" value="Submit">
+                                        <input type="submit" class="btn bg-success form-control" value="Filter Report">
                                     </div>
                                 </div>
 

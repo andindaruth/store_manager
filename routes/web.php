@@ -231,16 +231,20 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/equipment/actions_performed_give', [EquipmentActionController::class, 'actions_performed_give'])->name('equipment.actions.actions_performed_give');
     Route::post('/reverse-give', [EquipmentActionController::class, 'reverse_give'])->name('give.reverse');
     Route::get('/equipment/pending_return', [EquipmentActionController::class, 'pending_return'])->name('equipment.actions.pending_return');
-
-
+    Route::get('/equipment/{id}/return', [EquipmentActionController::class, 'return'])->name('equipment.actions.return');
+    Route::post('/equipment/{action}/store_return', [EquipmentActionController::class, 'store_return'])->name('equipment.store_return');
     Route::get('/equipment/returned', [EquipmentActionController::class, 'returned'])->name('equipment.actions.returned');
     Route::get('/equipment/taken_non_returnable', [EquipmentActionController::class, 'taken_non_returnable'])->name('equipment.actions.taken_non_returnable');
-
-    Route::get('/equipment/repaired', [EquipmentActionController::class, 'repaired'])->name('equipment.actions.repaired');
     Route::get('/equipment/report_out', [EquipmentActionController::class, 'report_out'])->name('equipment.actions.report_out');
+
+    Route::get('/equipment/{id}/recommend_for_repair', [EquipmentActionController::class, 'recommend_for_repair'])->name('equipment.actions.recommend_for_repair');
+    Route::post('/equipment/recommend_store', [EquipmentActionController::class, 'recommend_store'])->name('equipment.recommend_store');
+    Route::get('/equipment/actions_performed_recommend', [EquipmentActionController::class, 'actions_performed_recommend'])->name('equipment.actions.actions_performed_recommend');
+    Route::post('/reverse-recommend', [EquipmentActionController::class, 'reverse_recommend'])->name('recommend.reverse');
     Route::get('/equipment/pending_repair', [EquipmentActionController::class, 'pending_repair'])->name('equipment.actions.pending_repair');
-    Route::get('/equipment/return', [EquipmentActionController::class, 'return'])->name('equipment.actions.return');
-    Route::get('/equipment/repair', [EquipmentActionController::class, 'repair'])->name('equipment.actions.repair');
-    Route::get('/equipment/recommend_for_repair', [EquipmentActionController::class, 'recommend_for_repair'])->name('equipment.actions.recommend_for_repair');
+    Route::get('/equipment/{id}/repair', [EquipmentActionController::class, 'repair'])->name('equipment.actions.repair');
+    Route::post('/equipment/{action}/store_repair', [EquipmentActionController::class, 'store_repair'])->name('equipment.store_repair');
+    Route::get('/equipment/repaired', [EquipmentActionController::class, 'repaired'])->name('equipment.actions.repaired');
+    
     Route::get('/equipment/report_in', [EquipmentActionController::class, 'report_in'])->name('equipment.actions.report_in');
 });

@@ -23,6 +23,9 @@ return new class extends Migration
             $table->string('type')->nullable();
             $table->string('remarks')->nullable();
             $table->date('date');
+            $table->string('quantity_r')->nullable();//quantity_returned
+            $table->string('quantity_p')->nullable();//quantity_pending
+            $table->string('status')->nullable();            
             $table->timestamps();
         });
     }

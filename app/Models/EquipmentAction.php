@@ -17,6 +17,9 @@ class EquipmentAction extends Model
         'quantity',
         'date',
         'remarks',
+        'quantity_r',
+        'quantity_p',
+        'status',
         'is_reversed',
         'reversal_reason',
         'reversed_by',
@@ -24,15 +27,26 @@ class EquipmentAction extends Model
 
     public function equipment()
     {
-        return $this->belongsTo(equipment::class);
-}
-public function person()
-{
-    return $this->belongsTo(People::class);
-}
+        return $this->belongsTo(Equipment::class);
+    }
+    public function person()
+    {
+        return $this->belongsTo(People::class);
+    }
 
-public function user()
-{
-    return $this->belongsTo(User::class);
-}
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    // In Transaction model
+    public function returns()
+    {
+        return $this->hasMany(EquipmentReturn::class, 'action_id');
+    }
+
+    public function getPendingQuantity()
+    {
+        return $this->quantity - $this->quantity_r;
+    }
 }

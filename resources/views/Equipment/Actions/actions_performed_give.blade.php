@@ -23,7 +23,7 @@
                     <a href="{{ route('equipment.actions.actions_performed_give') }}" class="btn btn-success">Give Out</a>
                 </li>
                 <li>
-                    <a href="{{ route('equipment.actions.actions_performed') }}" class="btn btn-default btn-success">Recommend for Repair</a>
+                    <a href="{{ route('equipment.actions.actions_performed_recommend') }}" class="btn btn-default btn-success">Recommend for Repair</a>
                 </li>
                 <li>
                     <a href="{{ route('equipment.actions.actions_performed_dispose') }}" class="btn btn-default btn-success">Dispose</a>
@@ -35,8 +35,7 @@
 </div>
 
     <div class="col-sm-12">
-        <div class="card card-success card-outline">
-           
+        <div class="card card-success card-outline">           
             <div class="card-body table-responsive">
                 <table id="example3" class="table table-hover table-head-fixed table-sm table-striped">
                     <thead>

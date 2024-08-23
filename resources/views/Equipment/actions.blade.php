@@ -38,7 +38,7 @@
                                     <td>{{ $equipment->quantity_in_stock }}</td>
                                     <td><a href="{{ route('equipment.actions.give', ['id' => $equipment->id]) }}">Give out</a></td>
                                     <td><a href="{{ route('equipment.add', ['id' => $equipment->id]) }}">Add quantity</a></td>
-                                    <td><a href="{{ route('equipment.actions.recommend_for_repair') }}">Recommend for repair</a></td>
+                                    <td><a href="{{ route('equipment.actions.recommend_for_repair', ['id' => $equipment->id]) }}">Recommend for repair</a></td>
                                     <td><a href="{{ route('equipment.dispose', ['id' => $equipment->id]) }}">Dispose</a></td>               
                                 </tr>
                             @endforeach

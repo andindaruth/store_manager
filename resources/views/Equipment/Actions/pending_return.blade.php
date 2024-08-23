@@ -1,3 +1,7 @@
+@php
+    use Carbon\Carbon;
+@endphp
+
 @extends('layouts.app6')
 
 @section('title', 'Pending Return ')
@@ -80,7 +84,6 @@
         </div><!-- /.card -->
     </div> <!-- filter -->
 
-
     <div class="col-sm-12">
         <div class="card card-success card-outline">
             <div class="card-header">
@@ -99,15 +102,17 @@
                             <th>QTY Returned</th>
                             <th>QTY Pending Return</th>
                             <th>Days since taken</th>                            
-                            <th>Return</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @unless ($actions->isEmpty())
                             @foreach ($actions as $action)   
                             @php
-                                $startDate = $action->date;
-                                $endDate = now();
+                                // Convert the string to a Carbon instance
+                                $pastDate = Carbon::parse($action->date);
+                                    // Calculate the difference in days
+                                    $differenceInDays = now()->diffInDays($pastDate);
                             @endphp                       
                                 <tr class="text-nowrap">
                                     <td>{{ $action->date }}</td>
@@ -115,11 +120,10 @@
                                     <td>{{ $action->person->name }}</td>
                                     <td>{{ $action->user->name }}</td>
                                     <td>{{ $action->quantity }}</td>
-                                    <td>{{ $action->quantity }}</td>
-                                    <td>{{ $action->quantity }}</td>
-                                    <td>{{ $action->quantity }}</td>
-                                    {{-- <td>{{ $startDate->diffInDays($endDate) }}</td> --}}
-                                    <td><a href="{{ route('equipment.actions.return') }}">Return</a></td>
+                                    <td>{{ $action->quantity_r }}</td>
+                                    <td>{{ $action->quantity_p }}</td>
+                                    <td>{{ $differenceInDays }}</td>
+                                    <td><a href="{{ route('equipment.actions.return', ['id' => $action->id]) }}">Return</a></td>
                                 </tr>
                             @endforeach
                         @else

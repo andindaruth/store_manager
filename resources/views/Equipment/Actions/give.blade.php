@@ -57,26 +57,23 @@
                     </div>   
                     <div class="form-group">
                         <label for="quantity">Quantity taken *</label>
-                        <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="{{ $equipment->quantity_in_stock }}" required>
+                        <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="{{ $equipment->quantity_in_stock }}" value="{{ old('quantity') }}" required>
                         @error('quantity')
                             <div class="text-sm text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-
                     <div class="form-group">
                         <label for="remarks">Job/Reason *</label>
-                        <input type="text" class="form-control" id="remarks" name="remarks" required>
+                        <input type="text" class="form-control" id="remarks" name="remarks" value="{{ old('remarks') }}" required>
                         @error('remarks')
                             <div class="text-sm text-danger">{{ $message }}</div>
                         @enderror
-                    </div>
-                    
+                    </div>                    
                     <input type="text" class="form-control" id="user_id" name="user_id" value="{{ $user->id }}"
                         hidden>
                         <input type="text" class="form-control" id="equipment_id" name="equipment_id" value="{{ $equipment->id }}"
                         hidden>
                     <input type="text" class="form-control" id="type" name="type" value="give" hidden>
-                                               
                 </div>
                 <div class="card-footer">
                     <div class="card-tools text-right">

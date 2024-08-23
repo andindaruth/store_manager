@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('category1');
             $table->string('category2');
             $table->string('category3');
-            $table->decimal('quantity_in_stock');
-            $table->decimal('re_order_value');
+            $table->string('quantity_in_stock');
+            $table->string('re_order_value');
             $table->timestamps();
         });
     }

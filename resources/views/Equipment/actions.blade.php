@@ -34,7 +34,7 @@
                                 <tr class="text-nowrap">
                                     <td>
                                         <img src="{{ Storage::url($equipment->image) }}" alt="{{ $equipment->name }}" class="img-fluid" style="max-width: 60px; height: 75px;">                                 </td>
-                                    <td>{{ $equipment->name }}</td>
+                                    <td><a href="{{ route('equipment.edit', $equipment->id) }}">{{ $equipment->name }}</a></td>
                                     <td>{{ $equipment->quantity_in_stock }}</td>
                                     <td><a href="{{ route('equipment.actions.give', ['id' => $equipment->id]) }}">Give out</a></td>
                                     <td><a href="{{ route('equipment.add', ['id' => $equipment->id]) }}">Add quantity</a></td>

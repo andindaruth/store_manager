@@ -44,13 +44,13 @@
                                         <td>{{ $equipment->quantity_in_stock }}</td>
                                         <td>
                                             @if($equipment->quantity_in_stock > $equipment->re_order_value + 10)
-                                                <span style="color: green;">Stock OK</span>
-                                            @elseif($equipment->quantity_in_stock >= $equipment->re_order_value && $equipment->quantity_in_stock <= $equipment->re_order_value + 10)
-                                                <span style="color: Orange;">Need to Re-stock soon</span>
-                                            @else
-                                                <span style="color: red;">Re-Stock now</span>
-                                            @endif
-                                        </td>
+                                            <span style="background-color: #90EE90; color: black;">Stock OK</span>
+                                           @elseif($equipment->quantity_in_stock >= $equipment->re_order_value && $equipment->quantity_in_stock <= $equipment->re_order_value + 10)
+                                            <span style="background-color: yellow; color: black;">Need to Re-stock soon</span>
+                                           @else
+                                             <span style="background-color: red; color: black;">Crtical: Re-Stock now</span>
+                                        @endif
+                                         </td>
                                     </tr>
                                 @endif
                             @endforeach

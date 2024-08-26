@@ -144,7 +144,7 @@
                             <th>Brought By</th>
                             <th>Received By</th>
                             <th>QTY Brought</th>
-                            <th>Remarks</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -156,7 +156,7 @@
                                     <td>{{ $action->person->name }}</td>
                                     <td>{{ $action->user->name }}</td>
                                     <td>{{ $action->quantity }}</td>
-                                    <td>{{ $action->remarks }}</td>
+                                    
                                 </tr>
                             @endforeach
                         @else

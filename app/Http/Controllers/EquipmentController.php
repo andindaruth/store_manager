@@ -93,35 +93,35 @@ public function update(Request $request, Equipment $equipment)
     public function item()
     {
         $user = Auth::user();
-        $equipment = Equipment::all(); 
+        $equipment = Equipment::orderBy('name', 'asc')->get();
         return view('equipment.item', compact('equipment', 'user'));
     }
 
     public function tool()
     {
         $user = Auth::user();
-        $equipment = Equipment::all();
+        $equipment = Equipment::orderBy('name', 'asc')->get();
         return view('equipment.tool', compact('equipment', 'user'));
     }
 
     public function spare_part()
     {
         $user = Auth::user();
-        $equipment = Equipment::all();
+        $equipment = Equipment::orderBy('name', 'asc')->get();
         return view('equipment.spare_part', compact('equipment', 'user'));
     }
 
     public function farm()
     {
         $user = Auth::user();
-        $equipment = Equipment::all();
+        $equipment = Equipment::orderBy('name', 'asc')->get();
         return view('equipment.farm', compact('equipment', 'user'));
     }
     
     public function workshop()
     {
         $user = Auth::user();
-        $equipment = Equipment::all();
+        $equipment = Equipment::orderBy('name', 'asc')->get();
         return view('equipment.workshop', compact('equipment', 'user'));
     }
 

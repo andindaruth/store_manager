@@ -62,13 +62,7 @@
                         @enderror
                     </div>
 
-                    <div class="form-group">
-                        <label for="remarks">Remarks</label>
-                        <input type="text" class="form-control" id="remarks" name="remarks" >
-                        @error('remarks')
-                            <div class="text-sm text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
+                   
                     
                     <input type="text" class="form-control" id="user_id" name="user_id" value="{{ $user->id }}"
                         hidden>

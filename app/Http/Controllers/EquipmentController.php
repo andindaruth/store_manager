@@ -13,7 +13,7 @@ class EquipmentController extends Controller
     public function index()
     {      
         //dd($equipment);
-        $equipment = Equipment::all();
+        $equipment = Equipment::orderBy('name', 'asc')->get();
         $user = Auth::user();
         return view('equipment.actions', compact('equipment', 'user'));
     }

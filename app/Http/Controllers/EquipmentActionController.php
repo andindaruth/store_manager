@@ -190,8 +190,8 @@ class EquipmentActionController extends Controller
             $category3 = $request->input('category3');
             $query->join('equipment', 'equipment_actions.equipment_id', '=', 'equipment.id')
                 ->where('equipment.category3', $category3);
-        }else {
-           //skip
+        } else {
+            //skip
         }
         $actions = $query->where('type', 'add')
             ->where('is_reversed', false)
@@ -534,8 +534,8 @@ class EquipmentActionController extends Controller
             $category3 = $request->input('category3');
             $query->join('equipment', 'equipment_actions.equipment_id', '=', 'equipment.id')
                 ->where('equipment.category3', $category3);
-        }else {
-           //skip
+        } else {
+            //skip
         }
 
         $actions = $query->where('type', 'give')
@@ -805,37 +805,6 @@ class EquipmentActionController extends Controller
         return view('equipment.actions.repaired', compact('equipments', 'user', 'actions'));
     }
 
-//taken_non_returnable
-// public function taken_non_returnable(Request $request)
-// {
-
-//     $user = Auth::user();
-//     $equipments = Equipment::where('category3', 'non_returnable')->get();
-//     $query = EquipmentAction::query();
-
-//     if ($request->filled('equipment_id')) {
-//         $query->where('equipment_id', $request->input('equipment_id'));
-//     }
-
-//     if ($request->filled('from_date')) {
-//         $query->where('date', '>=', $request->input('from_date'));
-//     }
-
-//     if ($request->filled('to_date')) {
-//         $query->where('date', '<=', $request->input('to_date'));
-//     }
-
-//     $actions = $query->where('type', 'give')
-//         ->join('equipment', 'equipment_actions.equipment_id', '=', 'equipment.id')
-//         ->where('equipment.category3', 'non_returnable')
-//         ->where('is_reversed', false)
-//         ->orderBy('equipment_actions.date', 'desc')
-//         ->orderBy('equipment_actions.created_at', 'desc')
-//         ->paginate(50);
-
-//     return view('equipment.actions.taken_non_returnable', compact('equipments', 'user', 'actions'));
-// }
-
     //pending return
     public function pending_return(Request $request)
     {
@@ -856,14 +825,16 @@ class EquipmentActionController extends Controller
             $query->where('date', '<=', $request->input('to_date'));
         }
 
-        $actions = $query->where('type', 'give')
+        $actions = $query->select('equipment_actions.*', 'equipment_actions.id as action_id')
             ->join('equipment', 'equipment_actions.equipment_id', '=', 'equipment.id')
+            ->where('type', 'give')
             ->where('equipment.category3', 'returnable')
             ->where('is_reversed', false)
             ->whereNot('status', 'returned')
             ->orderBy('equipment_actions.date', 'desc')
             ->orderBy('equipment_actions.created_at', 'desc')
             ->paginate(50);
+
 
         return view('equipment.actions.pending_return', compact('equipments', 'user', 'actions'));
     }
@@ -872,8 +843,10 @@ class EquipmentActionController extends Controller
     //Return
     public function return($id)
     {
+
         $user = Auth::user();
         $action = EquipmentAction::findOrFail($id);
+        // dd($action);
         $operators = People::where('role', 'Operator')->get();
         return view('equipment.actions.return', compact('action', 'user', 'operators'));
     }

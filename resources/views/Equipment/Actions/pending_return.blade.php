@@ -123,7 +123,7 @@
                                     <td>{{ $action->quantity_r }}</td>
                                     <td>{{ $action->quantity_p }}</td>
                                     <td>{{ $differenceInDays }}</td>
-                                    <td><a href="{{ route('equipment.actions.return', ['id' => $action->id]) }}">Return</a></td>
+                                    <td><a href="{{ route('equipment.actions.return', ['id' => $action->action_id]) }}">Return</a></td>
                                 </tr>
                             @endforeach
                         @else

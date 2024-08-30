@@ -93,8 +93,9 @@
                             <th>Date of Disposal</th>
                             <th>Name of Equipment</th>
                             <th>Disposed By</th>
-                            <th>Quantity Disposed</th>
                             <th>Reason for disposal</th>
+                            <th>Quantity Disposed</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -104,8 +105,9 @@
                                     <td>{{ $action->date }}</td>
                                     <td>{{ $action->equipment->name }}</td>
                                     <td>{{ $action->user->name }}</td>
-                                    <td>{{ $action->quantity }}</td>
                                     <td>{{ $action->remarks }}</td>
+                                    <td>{{ $action->quantity }}</td>
+                                    
                                 </tr>
                             @endforeach
                         @else

@@ -152,8 +152,9 @@
                             <th>Name of Equipment</th>
                             <th>Taken By</th>
                             <th>Issued By</th>
+                            <th>Reason/Job</th>
                             <th>QTY Taken</th>
-                            <th>Remarks</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -164,8 +165,9 @@
                                     <td>{{ $action->equipment->name }}</td>
                                     <td>{{ $action->person->name }}</td>
                                     <td>{{ $action->user->name }}</td>
-                                    <td>{{ $action->quantity }}</td>
                                     <td>{{ $action->remarks }}</td>
+                                    <td>{{ $action->quantity }}</td>
+                                    
                                 </tr>
                             @endforeach
                         @else

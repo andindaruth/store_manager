@@ -92,7 +92,7 @@
                             <th>Recommended By</th>
                             <th>Issues</th>
                             <th>Repaired By</th>
-                            <th>Action Taken</th>
+                            <th>Action(s) Taken</th>
                         </tr>
                     </thead>
                     <tbody>

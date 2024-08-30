@@ -213,7 +213,6 @@ Route::middleware(['auth'])->group(function () {
 
 //EquipmentAction
 Route::middleware(['auth'])->group(function () {
-    // Add this in your web.php
     Route::get('/equipment/{id}/add', [EquipmentActionController::class, 'showAddForm'])->name('equipment.add');
     Route::post('/equipment/add', [EquipmentActionController::class, 'addQuantity'])->name('equipment.addQuantity');
     Route::get('/equipment/actions_performed', [EquipmentActionController::class, 'actions_performed'])->name('equipment.actions.actions_performed');

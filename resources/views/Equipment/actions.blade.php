@@ -19,6 +19,7 @@
                 <table id="example3" class="table table-hover table-head-fixed table-sm table-striped">
                     <thead>
                         <tr>
+                            <th>No:</th>
                             <th>Image</th>
                             <th>Name</th>
                             <th>Quantity in stock</th>
@@ -32,6 +33,7 @@
                         @unless ($equipment->isEmpty())
                             @foreach ($equipment as $equipment)                          
                                 <tr class="text-nowrap">
+                                <td>{{ $equipment->id }}</td>
                                     <td>
                                         <img src="{{ Storage::url($equipment->image) }}" alt="{{ $equipment->name }}" class="img-fluid" style="max-width: 60px; height: 75px;">                                 </td>
                                     <td><a href="{{ route('equipment.edit', $equipment->id) }}">{{ $equipment->name }}</a></td>

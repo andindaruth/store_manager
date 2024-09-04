@@ -4,7 +4,7 @@
 @extends('layouts.app6')
 
 @section('title', 'Returned ')
-@section('page_title', 'Returned Equipment')
+@section('page_title', 'Returned')
 
 @section('bread_crumb')
     <ol class="breadcrumb float-sm-right">

@@ -207,8 +207,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/equipment/items', [EquipmentController::class, 'item'])->name('equipment.items');
     Route::get('/equipment/tools', [EquipmentController::class, 'tool'])->name('equipment.tools');
     Route::get('/equipment/spare_parts', [EquipmentController::class, 'spare_part'])->name('equipment.spare_parts');
-    Route::get('/equipment/farm', [EquipmentController::class, 'farm'])->name('equipment.farm');
+    Route::get('/equipment/material', [EquipmentController::class, 'material'])->name('equipment.material');
     Route::get('/equipment/workshop', [EquipmentController::class, 'workshop'])->name('equipment.workshop');
+    Route::get('/equipment/farm', [EquipmentController::class, 'farm'])->name('equipment.farm');
+    Route::get('/equipment/all', [EquipmentController::class, 'all'])->name('equipment.all');
 });
 
 //EquipmentAction

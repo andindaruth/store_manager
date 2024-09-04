@@ -1,7 +1,7 @@
 @extends('layouts.app6')
 
 @section('title', 'Farm ')
-@section('page_title', 'Farm Equipment')
+@section('page_title', 'Farm')
 
 @section('main_content')
 

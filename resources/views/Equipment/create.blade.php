@@ -29,7 +29,8 @@
                         <option value="">--Select category</option>                            
                         <option value="item">Item</option>
                         <option value="tool">Tool</option>
-                        <option value="spare_part">Spare Part</option>                            
+                        <option value="spare_part">Spare Part</option>
+                        <option value="material">Material</option>                         
                     </select>
                     @error('category1')
                         <div class="text-sm text-danger">{{ $message }}</div>
@@ -38,9 +39,10 @@
                 <div class="form-group">
                     <label for="category2">Category 2*</label>
                     <select class="form-control select2" id="category2" name="category2" required>
-                        <option value="">--Select category</option>                            
-                        <option value="farm">Farm</option>
+                        <option value="">--Select category</option> 
                         <option value="workshop">Workshop</option>                           
+                        <option value="farm">Farm</option>
+                                                   
                     </select>
                     @error('category2')
                         <div class="text-sm text-danger">{{ $message }}</div>

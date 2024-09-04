@@ -1,7 +1,7 @@
 @extends('layouts.app6')
 
-@section('title', 'Workshop ')
-@section('page_title', 'Workshop')
+@section('title', 'Material ')
+@section('page_title', 'Matrial')
 
 @section('main_content')
 
@@ -25,7 +25,7 @@
                     <tbody>
                         @unless ($equipment->isEmpty())
                             @foreach ($equipment as $equipment)
-                                @if ($equipment->category2 === 'workshop') <!-- Filtering by category1 -->
+                                @if ($equipment->category1 === 'material') <!-- Filtering by category1 -->
                                     <tr class="text-nowrap">
                                         <td>
                                             <img src="{{ Storage::url($equipment->image) }}" alt="{{ $equipment->name }}" class="img-fluid" style="max-width: 60px; height: 75px;">

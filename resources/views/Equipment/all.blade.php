@@ -1,7 +1,7 @@
 @extends('layouts.app6')
 
-@section('title', 'Workshop ')
-@section('page_title', 'Workshop')
+@section('title', 'All ')
+@section('page_title', 'All')
 
 @section('main_content')
 
@@ -14,9 +14,13 @@
                 <table id="example3" class="table table-hover table-head-fixed table-sm table-striped">
                     <thead>
                         <tr>
+                            <th>No:</th>
                             <th>Image</th>
                             <th>Name</th>
                             <th>Description</th>
+                            <th>Category 1</th>
+                            <th>Category 2</th>
+                            <th>Category 3</th>
                             <th>Re-order value</th>
                             <th>Quantity in stock</th>
                             <th>Comment</th>
@@ -25,8 +29,9 @@
                     <tbody>
                         @unless ($equipment->isEmpty())
                             @foreach ($equipment as $equipment)
-                                @if ($equipment->category2 === 'workshop') <!-- Filtering by category1 -->
+                                
                                     <tr class="text-nowrap">
+                                    <td>{{ $equipment->id }}</td>
                                         <td>
                                             <img src="{{ Storage::url($equipment->image) }}" alt="{{ $equipment->name }}" class="img-fluid" style="max-width: 60px; height: 75px;">
                                         </td>
@@ -34,6 +39,9 @@
                                             <a href="{{ route('equipment.edit', $equipment->id) }}">{{ $equipment->name }}</a>
                                         </td>
                                         <td>{{ $equipment->description }}</td>
+                                        <td>{{ $equipment->category1 }}</td>
+                                        <td>{{ $equipment->category2 }}</td>
+                                        <td>{{ $equipment->category3 }}</td>
                                         <td>{{ $equipment->re_order_value }}</td>
                                         <td>{{ $equipment->quantity_in_stock }}</td>
                                         <td>
@@ -43,7 +51,7 @@
                                             <span style="background-color: yellow; color: black;">Need to Re-stock soon</span>
                                            @else
                                              <span style="background-color: red; color: black;">Crtical: Re-Stock now</span>
-                                        @endif
+                                        
                                          </td>
                                     </tr>
                                 @endif

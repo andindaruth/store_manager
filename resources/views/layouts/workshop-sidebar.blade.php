@@ -45,10 +45,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('equipment.farm') }}" class="nav-link">
-                    <i class="fas fa-tractor"></i>
+                    <a href="{{ route('equipment.material') }}" class="nav-link">
+                    <i class="fas fa-cogs"></i>
                         <p>
-                            Farm Equipemnet
+                            Material
                         </p>
                     </a>
                 </li>
@@ -56,15 +56,34 @@
                     <a href="{{ route('equipment.workshop') }}" class="nav-link">
                     <i class="fas fa-tools"></i>
                         <p>
-                            Workshop Equipment
+                            Workshop
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('equipment.farm') }}" class="nav-link">
+                    <i class="fas fa-tractor"></i>
+                        <p>
+                            Farm
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('equipment.all') }}" class="nav-link">
+                    <i class="fas fa-tractor"></i>
+                        <p>
+                            All
+                        </p>
+                    </a>
+                </li>
+                
                 <li class="nav-item">
                     <a href="{{ route('equipment.actions.returned') }}" class="nav-link">
                     <i class="fas fa-redo"></i>
                         <p>
-                            Returned Equipment
+                            Returned
                         </p>
                     </a>
                 </li>
@@ -96,7 +115,7 @@
                     <a href="{{ route('equipment.actions.report_in') }}" class="nav-link">
                     <i class="fas fa-clipboard-list"></i>
                         <p>
-                            General report of Brought Equipment
+                            Report In
                         </p>
                     </a>
                 </li>
@@ -104,7 +123,7 @@
                     <a href="{{ route('equipment.actions.report_out') }}" class="nav-link">
                     <i class="fas fa-clipboard-list"></i>
                         <p>
-                            General report of taken Equipment
+                            Report Out
                         </p>
                     </a>
                 </li>

@@ -13,7 +13,7 @@ class EquipmentController extends Controller
     public function index()
     {      
         //dd($equipment);
-        $equipment = Equipment::orderBy('name', 'asc')->get();
+        $equipment = Equipment::orderBy('id', 'asc')->get();
         $user = Auth::user();
         return view('equipment.actions', compact('equipment', 'user'));
     }
@@ -111,6 +111,13 @@ public function update(Request $request, Equipment $equipment)
         return view('equipment.spare_part', compact('equipment', 'user'));
     }
 
+    public function material()
+    {
+        $user = Auth::user();
+        $equipment = Equipment::orderBy('name', 'asc')->get();
+        return view('equipment.material', compact('equipment', 'user'));
+    }
+
     public function farm()
     {
         $user = Auth::user();
@@ -123,6 +130,13 @@ public function update(Request $request, Equipment $equipment)
         $user = Auth::user();
         $equipment = Equipment::orderBy('name', 'asc')->get();
         return view('equipment.workshop', compact('equipment', 'user'));
+    }
+
+    public function all()
+    {
+        $user = Auth::user();
+        $equipment = Equipment::orderBy('id', 'asc')->get();
+        return view('equipment.all', compact('equipment', 'user'));
     }
 
 }
